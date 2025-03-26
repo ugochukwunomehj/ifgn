@@ -1,0 +1,266 @@
+{% extends 'ifgnapp/base.html'%}
+
+{% load static %}
+{% block title %}
+{{ title }} - Institute of Forensic Graphology
+{% endblock %}
+
+{% block metadata %}
+<meta name="description" content="{{des}}" />
+<link rel="canonical" href="https://ifgn-institute.org{{request.path_info}}" />
+<meta name="keywords" content="{{name}}, Health, Maternity, well-being, healthcare, Preventive Medicine, Institute of Forensic Graphology">
+<meta property="og:site_name" content="Institute of Forensic Graphology" />
+<meta property="og:type" content="Article" />
+<meta property="og:title" content="{{s_title}}" />
+<meta property="og:description" content="{{des}}" />
+<meta property="og:image" content="{% if g_img %}https://ifgn-institute.org/media/{{g_img}}{% else %}https://ifgn-institute.org{% static 'ifgnapp/images/AfriBang-img.png' %}{% endif %}" />
+<meta property="og:locale" content="en_us" />
+<meta property="og:url" content="https://ifgn-institute.org{{request.path_info}}" />
+<meta name="twitter:description" content="{{des}}" />
+<meta name="twitter:title" content="{{s_title}}" />
+<meta name="twitter:site" content="@st-maryshospital" />
+<meta name="twitter:image" content="{% if g_img %}https://ifgn-institute.org/media/{{g_img}}{% else %}https://ifgn-institute.org{% static 'ifgnapp/images/AfriBang-img.png' %}{% endif %}" />
+<meta property="twiter:card" content="summary_large_image" />
+<meta name="twitter:image:alt" content="{{name}}" />
+    {% endblock %}
+
+        
+        {% block content %}
+        
+        {% if status == "success" %}
+    <article style="display: flex; box-sizing: border-box; width: 100%; justify-content: center; align-items: center;">
+        <!-- <aside style="width: 50px; height: 300px; background-color: #c94949;">
+
+        </aside> -->
+
+        <article id="big_sect" itemscope itemtype="https://schema.org/Article">
+            
+            <!-- directions -->
+    <aside id="dir-wrap-cnt">
+        <a href="/">Home &RightArrow;</a>
+        <a href="/blog/">Posts &RightArrow;</a>
+        <span>{{ name }}</span>
+    </aside>
+    
+    <h1 itemprop="headline" id="pg_hd_top">
+        {{title}}
+        </h1>
+        <!-- Article top image.. -->
+        <figure id="img_wrap">
+            <img itemprop="image" height="auto" width="100%" src="/media/{{image1}}" alt="{{title}}">
+        </figure>
+        
+        <!-- autor and pub date.. -->
+        <div id="autor-main-wrapp" style="display: none;">
+            <div>
+                <span id="autor-wrapper">
+                    {% if author.thumbnail %}
+                    <img width="100%" height="auto" src="/media/{{author.thumbnail}}" alt="{{author.name}} avatar">
+                    {% else %}
+                    <img width="100%" height="auto" src="{% static 'ifgnapp/images/apple-touch-icon.png' %}" alt="ST. Mary's Hospital logo">
+                    {% endif %}
+                </span> 
+                
+                <span>
+                    {{author.name}}
+                </span>
+            </div>
+            
+            <span style="display: flex;">
+                <span>
+                    Updated on {{date | date:"M t, Y"}} &nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                    </svg> {{r_time}}
+                </span>
+            </span>
+
+        </div>
+
+<section class="page_txt txt" itemprop="articleBody"> 
+    {{content1 | safe}}
+</section>
+
+{% if content2 %}
+<section class="page_txt txt">
+    {{content2 | safe}}    
+</section>
+{% else %} 
+{% endif %}  
+
+{% if content3 %}
+<section class="page_txt txt">
+    {{content3 | safe}}    
+</section>
+{% else %} 
+{% endif %}  
+
+<meta itemprop="url" content="https://ifgn-institute.org{{request.path_info}}">
+
+<!-- Share and social icons.. -->
+
+<aside id="share_holder">
+    
+    <aside id="share-box" onclick="_share()">
+        
+        <span id="share"> 
+            &#xe;
+            </span>
+            <span>
+                share
+            </span>
+        </aside>
+       
+        <aside id="share_ico_wrapper">
+            <aside class="share_links" onclick='window.location.href=encodeURI("https://www.facebook.com/sharer/sharer.php?u=https://ifgn-institute.org{{request.path_info}}")'>
+                <img height="auto" width="100%" src="/fb-icon.svg" alt="Facebook logo">
+            </aside>
+            
+            <aside class="share_links" onclick='window.location.href=encodeURI("https://wa.me/?text={{name}} - Read more on our Website Blog https://ifgn-institute.org{{request.path_info}}")'>
+                <img height="auto" width="100%" src="/wtp-icon.svg" alt="Whatsapp logo">
+            </aside>
+            
+            <aside class="share_links" onclick='window.location.href=encodeURI("https://www.linkedin.com/shareArticle?mini=true&url=https://ifgn-institute.org{{request.path_info}}")'>
+                <img height="auto" width="100%" src="/linked-icon.svg" alt="linkedIn logo">
+            </aside>
+            
+            <aside class="share_links" onclick='window.location.href=encodeURI("https://t.me/share?url=https://ifgn-institute.org{{request.path_info}}&text={{name}}")'>
+                <img height="auto" width="100%" src="/telg-icon.svg" alt="Telegram logo">
+            </aside>
+            
+            <aside class="share_links" onclick='window.location.href=encodeURI("https://twitter.com/intent/tweet?text={{name}} Read more on our Website Blog \n https://ifgn-institute.org{{request.path_info}}")'>
+                <img height="100%" width="auto" src="/twit-icon.svg" alt="X logo">
+            </aside>
+            
+        </aside>
+    </aside> 
+    
+</article>
+</article>
+
+
+{% else %}
+<aside style="color: #c94949; display: flex;flex-direction: column;justify-content: center;align-items: center; text-transform: capitalize; margin: 2rem auto; width: 100%; font-size: 2rem; font-weight: 700;min-height: calc(100vh - 250px); gap: 1rem;box-sizing: border-box;">
+    <span style="width: 100px; height: 100px;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 24 24" width="100%" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M20 2H4c-1 0-2 .9-2 2v3.01c0 .72.43 1.34 1 1.69V20c0 1.1 1.1 2 2 2h14c.9 0 2-.9 2-2V8.7c.57-.35 1-.97 1-1.69V4c0-1.1-1-2-2-2zm-5 12H9v-2h6v2zm5-7H4V4l16-.02V7z"/></svg>
+    </span>
+    <span>
+        No Page/Content found! <br> please check back later!
+    </span>
+</aside>
+
+{% endif %}
+
+
+
+<section style="display: block; width: 100%; height: auto; box-sizing: border-box;">
+        {% if posts %}
+        <h2 class="inner_box_hd inner-page-hd">
+            More Articles
+        </h2>
+       
+ <section class="article_box_wrapper">
+
+    {% for post in posts %}
+    <!-- article wrapper.. -->
+   <a href="{{ post.get_absolute_url }}" class="article_wrapper" style="text-decoration: none;">
+     <!-- article image.. -->
+     <div class="article_img_wrap">
+         <img style="width: auto; height: 105%; opacity: 0.85;" src="/media/{{ post.image1}}" alt="{{ post.name }}">
+     </div>
+     
+     <div class="article_txt_wrapper">
+         <span class="article_tag">{{ post.category }}</span>
+         <!-- article writing.. -->
+         <p class="article_txt">
+             {{ post.title }}
+            </p>
+            
+            <span class="artic_arrow_wrapper">
+                <span>
+                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 16 16">
+                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                 </svg>
+             </span>
+         </span>
+     </div>
+ 
+    </a>
+    {% endfor %}
+    <!-- the end.. -->
+    
+</section>
+    
+    <aside id="link-btn-wrapper">
+        <a href="/blog/">
+            <span class="page_btn">
+                More like this
+            </span>
+        </a>
+    </aside>
+
+    {% else %} {% endif %}
+
+</section>
+
+
+<style>
+    #link-btn-wrapper{display: flex; width: 100%; height: auto; justify-content: center; align-items: center; margin: 2rem auto; margin-bottom: 5rem;}
+    #link-btn-wrapper > a{
+        text-decoration: none; margin-top: 2rem; margin: auto;
+    }
+    .inner-page-hd{margin: auto; margin-top: 0px; display: block; max-width: 850px; position: relative;}
+     #dir-wrap-cnt{color: var(--main-color); font-size: smaller; font-weight: bolder; text-shadow: none; text-decoration: none; justify-content: flex-start; padding: 1rem; width: 100%; box-sizing: border-box;}
+     #dir-wrap-cnt a{text-decoration: none !important; color: inherit !important; }
+            #pg_hd_top{color: #565555; font-size:2.3rem; text-align: left; padding-left: 1rem; padding-right: 1rem; font-style: oblique; margin: 1.3rem auto 2rem auto;}
+            #autor-main-wrapp{display: flex; color: var(--txt-color-normal); padding: 1rem; flex-direction: column; width: 100%; justify-content: flex-start; align-items: flex-start; font-size: 0.9rem; box-sizing: border-box; }
+            #autor-main-wrapp div{ width: 100%; display: flex; justify-content: flex-start; align-items: center; } 
+            #autor-wrapper{height: 30px; width: 30px; border: 1px solid gray; border-radius: 15px; background-color: #f2f2f2; overflow: hidden; margin-right: 0.3rem;}
+    .page_txt{
+    text-align: left; 
+    color: var(--txt-color-normal); 
+    line-height: 1.5;
+    font-family: 'Roboto Condensed', sans-serif; 
+    font-size:1rem; 
+    padding: 1rem;
+    }
+    #img_wrap{
+        display: flex;
+        margin: auto;
+        height: auto;
+        width: 100%;
+        padding: 0px 1.5rem;
+        max-width: 950px;
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center; 
+        overflow: hidden; border-radius: 1rem;
+    }
+    #share-box{ display: flex; width: 100px; margin: 1rem auto 1rem 0rem; border-radius: 6px; padding: 0.4rem 0.5rem; justify-content: center; align-items: center;  cursor: pointer;  color: #535151;  background-color: #e4e4e2; transition: .4s;}
+  #share{height: 20px; box-sizing: border-box; margin-right: 0.3rem; width: 20px; color: inherit;}
+    #share-box:active, #share-box:hover, #share-box:focus{ background-color: var(--main-color); color: lavenderblush;}
+    #share_holder{ width: 100%; margin-top: 1rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #ebebeb; padding-right: 0.5rem; padding-left: 0.5rem; max-width: 955%; box-sizing: border-box;}
+        #share-box > span{padding: 3px;font-size: 1rem;font-weight: bolder;}
+        #big_sect{margin: 80px auto 0px auto;  gap:0px; max-width: 850px !important; justify-content: flex-start;}
+                .share_links{
+                    display: flex; margin-left: 0.5rem; justify-content: center; overflow: hidden; align-items: center; height: 20px; box-sizing: border-box; margin-right: 0.3rem; width: 20px; color: red; }
+                #share_ico_wrapper{
+                    display: flex; width: calc(100% - 100px); box-sizing: border-box; justify-content: flex-end; align-items: center;}
+                </style>
+<script>
+    document.getElementById('share').innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 16 16"> <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/> </svg>`; 
+  function _share(){ const share_contents = { title: "{{title}} - Institute of Forensic Graphology", url: "https://ifgn-institute.org{{request.path_info}}", }; 
+  if(navigator.canShare){try { navigator.share(share_contents); _ret_txt =  'shared successfully, Thanks for sharing!'; } catch { _ret_txt ='link not shared please try again'; } } else { 
+    try {
+        navigator.clipboard.writeText("{{title}} - Institute of Forensic Graphology https://ifgn-institute.org{{request.path_info}}").then(function() {
+                  pop_mgs('Link copied successfully!', sts='success');
+                          }, function() {
+                            pop_mgs('Sorry an error occoured', sts='failed');
+                        });
+                        } catch (err) {
+                            pop_mgs('Sorry an error occoured', sts='failed');
+                      }
+                    }}
+                    </script>
+{% endblock %}
+         

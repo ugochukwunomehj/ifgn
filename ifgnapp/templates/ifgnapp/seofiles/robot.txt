@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ifgn-institute.org/sitemap.xml
+Sitemap: https://ifgn-institute.org/sitemap-post1.xml 

@@ -1,0 +1,150 @@
+{% extends 'ifgnapp/base.html' %}
+{% load static %}
+
+{% block title %} 
+Our Services | Institute of Forensic Graphology, Nigeria
+{% endblock %}
+
+{% block metadata %}     
+<meta name="description" content="Institute of Forensic Graphology, Nigeria offers a comprehensive range of medical services, including general medicine, emergency care, surgical procedures, and pediatric care. Our specialized maternity services encompass prenatal, labor, delivery, and postnatal care." />
+<link rel="canonical" href="https://ifgn-institute.org{{request.path_info}}" />               
+<meta property="og:site_name" content="Institute of Forensic Graphology" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Our Services- Institute of Forensic Graphology, Nigeria" />
+<meta property="og:description" content="Institute of Forensic Graphology, Nigeria offers a comprehensive range of medical services, including general medicine, emergency care, surgical procedures, and pediatric care." />
+<meta property="og:image" content="https://ifgn-institute.org{% static 'ifgnapp/images/apple-touch-icon.png' %}" />
+<meta property="og:locale" content="en_us" />
+<meta property="og:url" content="https://ifgn-institute.org{{request.path_info}}" />
+<meta name="twitter:site" content="@Institute of Forensic Graphology, Nigeria" />
+<meta name="twitter:title" content="Our Services- Institute of Forensic Graphology, Nigeria" />
+<meta name="twitter:description" content="Institute of Forensic Graphology, Nigeria offers a comprehensive range of medical services, including general medicine, emergency care, surgical procedures, and pediatric care." />
+<meta name="twitter:creator" content="@withubb" />
+<meta name="twitter:image" content="https://ifgn-institute.org{% static 'ifgnapp/images/apple-touch-icon.png' %}" />
+<meta property="twiter:card" content="summary_large_image" />
+<meta name="twitter:image:alt" content="Institute of Forensic Graphology, Nigeria logo" />
+{% endblock %}
+
+{% block content %}
+
+<article id="big_sect">
+
+  <section id="direction-wrap">
+    <aside style="display: block; position: absolute; height: 100%; width: 100%; background-size: cover; 
+    background-repeat: no-repeat; opacity: 0.66;
+    background-position: center; top: 0px; left: 0px; background-image: url({% static 'ifgnapp/images/doc-img2.jpg' %}); ">
+    
+  </aside>
+  
+  <aside id="rays"></aside>
+  <section id="top-page-txt-wrapper">
+    <h1> Case Studies: Our Actions </h1>
+    
+    <div id="top-page-txt-box">
+      <a href="/">Home </a> 
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+      </svg>
+      <span> Case Studies </span>
+    </div>
+    <span id="down_arrow">
+<svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 -960 960 960" width="100%" fill="currentColor"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+    </span>
+  </section>
+   
+    </section>
+    
+ <article id="sect-holder" style="margin-bottom: 5rem;">
+
+
+    <!-- Our services.. -->
+<article class="inpage_sect">
+  
+<!--  
+        <section class="med_serve_displ_box" style="margin-top: 1rem !important;">
+               <div class="med_serve_img_box">
+                  <img src="{% static 'ifgnapp/images/maternity.jpg' %}" alt="St. Mary's Maternity Image">
+               </div>
+
+               <div class="med_serve_txt_box">
+                <h2>Marternity</h2>
+                  <p>
+                    Our Maternity Care is one of the best Maternity in Nigeria. With over 30 new born babies deliveries every month and over 50 years of experience. We can pose as your reliable ally in terms of Maternity Care.
+                  </p>
+               </div>
+        </section>
+
+
+        <section class="med_serve_displ_box">
+               <div class="med_serve_img_box">
+                  <img src="{% static 'ifgnapp/images/radioimg.jpg' %}" alt="St. Mary's Maternity Image">
+               </div>
+
+               <div class="med_serve_txt_box">
+                <h2>Radiology</h2>
+                  <p>
+                    Our Maternity Care is one of the best Maternity in Nigeria. With over 30 new born babies deliveries every month and over 50 years of experience. We can pose as your reliable ally in terms of Maternity Care.
+                  </p>
+               </div>
+        </section>
+
+        
+        <section class="med_serve_displ_box">
+               <div class="med_serve_img_box">
+                  <img src="{% static 'ifgnapp/images/bloodtest.jpg' %}" alt="St. Mary's Maternity Image">
+               </div>
+
+               <div class="med_serve_txt_box">
+                <h2>Blood Screening</h2>
+                  <p>
+                    Our Maternity Care is one of the best Maternity in Nigeria. With over 30 new born babies deliveries every month and over 50 years of experience. We can pose as your reliable ally in terms of Maternity Care. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio illo nihil quis est voluptas qui? Molestias doloremque ducimus porro, accusantium similique nulla dicta commodi quod dolor delectus obcaecati accusamus est! <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, consequatur? Iste cum saepe tempora beatae consequatur. Aspernatur ratione placeat natus rem. Doloribus fugiat maiores libero rerum asperiores iusto tenetur reiciendis.
+                  </p>
+               </div>
+        </section>
+
+        <section class="med_serve_displ_box">
+               <div class="med_serve_img_box">
+                  <img src="{% static 'ifgnapp/images/cardiology.jpg' %}" alt="St. Mary's Maternity Image">
+               </div>
+
+               <div class="med_serve_txt_box">
+                <h2>Cardiology</h2>
+                  <p>
+                    Our Maternity Care is one of the best Maternity in Nigeria. With over 30 new born babies deliveries every month and over 50 years of experience. We can pose as your reliable ally in terms of Maternity Care.
+                  </p>
+               </div>
+        </section>
+
+        <section class="med_serve_displ_box">
+               <div class="med_serve_img_box">
+                  <img src="{% static 'ifgnapp/images/dentist.jpg' %}" alt="St. Mary's Maternity Image">
+               </div>
+
+               <div class="med_serve_txt_box">
+                <h2>Dentistry</h2>
+                  <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa sit doloremque asperiores cupiditate corrupti ex eos similique exercitationem, voluptates illum fuga suscipit sequi laboriosam nobis molestiae facere sed aliquam molestias. <br>
+                    Our Maternity Care is one of the best Maternity in Nigeria. With over 30 new born babies deliveries every month and over 50 years of experience. We can pose as your reliable ally in terms of Maternity Care.
+                  </p>
+               </div>
+        </section>
+
+        <section class="med_serve_displ_box">
+               <div class="med_serve_img_box">
+                  <img src="{% static 'ifgnapp/images/maternity.jpg' %}" alt="St. Mary's Maternity Image">
+               </div>
+
+               <div class="med_serve_txt_box">
+                <h2>Marternity</h2>
+                  <p>
+                    Our Maternity Care is one of the best Maternity in Nigeria. With over 30 new born babies deliveries every month and over 50 years of experience. We can pose as your reliable ally in terms of Maternity Care.
+                  </p>
+               </div>
+        </section> -->
+
+</article>
+
+<!-- End of this section.. -->
+          
+</article>
+
+</article>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% load static %}
+{
+  "short_name": "IFGN Institute",
+  "name": "Institute of Forensic Graphology, Nigeria",
+  "icons": [
+    {
+      "src": "{{ request.scheme }}://{{ request.get_host }}{% static 'ifgnapp/images/site-logo-192x192.png' %}",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "{{ request.scheme }}://{{ request.get_host }}{% static 'ifgnapp/images/site-logo-512x512.png' %}",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#fff",
+  "display_override": ["window-control-overlay", "minimal-ui"],
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#fff",
+  "shortcuts": [
+    {
+      "short_name": "Services",
+      "name": "IFGN Services",
+      "description": "Institute of Forensic Graphology, Nigeria Services",
+      "url": "/our-services/",
+      "icons": [{ "src": "{{ request.scheme }}://{{ request.get_host }}{% static 'ifgnapp/images/site-logo-192x192.png' %}", "sizes": "192x192" }]
+    },
+    {
+      "name": "IFGN Blog",
+      "short_name": "Blog",
+      "description": "Our Blog and Publication",
+      "url": "/blog/",
+      "icons": [{ "src": "{{ request.scheme }}://{{ request.get_host }}{% static 'ifgnapp/images/site-logo-192x192.png' %}", "sizes": "192x192" }]
+    }, 
+    {
+      "name": "IFGN Courses",
+      "short_name": "Courses",
+      "description": "Our Courses",
+      "url": "/courses/",
+      "icons": [{ "src": "{{ request.scheme }}://{{ request.get_host }}{% static 'ifgnapp/images/site-logo-192x192.png' %}", "sizes": "192x192" }]
+    }, 
+    {
+      "name": "IFGN Images",
+      "short_name": "Images",
+      "description": "Our Image Gallery",
+      "url": "/images/gallery/",
+      "icons": [{ "src": "{{ request.scheme }}://{{ request.get_host }}{% static 'ifgnapp/images/site-logo-192x192.png' %}", "sizes": "192x192" }]
+    }
+  ],
+  "lang": "en",
+  "description": "Institute of Forensic Graphology, Nigeria: Africa's leading institute in forensic handwriting analysis, providing expert training, certification, and investigative solutions with integrity and scientific precision. Ink doesn't lie, we prove it!",
+  "categories": [
+    "Services",
+    "Courses",
+    "IFGN Images",
+    "Blog"
+] }

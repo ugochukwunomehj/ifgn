@@ -1,0 +1,475 @@
+{% extends 'ifgnapp/base.html' %}
+{% load static %}
+
+{% block title %} 
+Institute of Forensic Graphology, Nigeria 
+{% endblock %}
+
+{% block metadata %}     
+<meta name="description" content="Welcome to Institute of Forensic Graphology, Nigeria (Member St. Mary's Health Care Venture Inc.) is a notable Hospital and Maternity in Enugu, Nigeria, that offers a wide range of healthcare and medical services." /> 
+<meta name="keywords" content="St. Mary's Hospital & Maternity, St. Mary's Health Care Venture Inc, Hospital and Maternity services in Enugu Nigeria, Medical Care, St. Mary's Hospital Enugu">
+<link rel="canonical" href="https://ifgn-institute.org{{request.path_info}}" />               
+<meta property="og:site_name" content="Institute of Forensic Graphology, Nigeria" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Institute of Forensic Graphology, Nigeria" />
+<meta property="og:description" content="Welcome to Institute of Forensic Graphology, Nigeria (Member St. Mary's Health Care Venture Inc.) is a notable Hospital and Maternity in Enugu, Nigeria, that offers a wide range of healthcare and medical services." />
+<meta property="og:image" content="https://ifgn-institute.org{% static 'ifgnapp/images/apple-touch-icon.png' %}" />
+<meta property="og:locale" content="en_us" />
+<meta property="og:url" content="https://ifgn-institute.org{{request.path_info}}" />
+<meta name="twitter:site" content="@Institute of Forensic Graphology, Nigeria" />
+<meta name="twitter:title" content="Institute of Forensic Graphology, Nigeria" />
+<meta name="twitter:description" content="Welcome to Institute of Forensic Graphology, Nigeria (Member St. Mary's Health Care Venture Inc.) is a notable Hospital and Maternity in Enugu, Nigeria, that offers a wide range of healthcare and medical services." />
+<meta name="twitter:creator" content="@withubb" />
+<meta name="twitter:image" content="https://ifgn-institute.org{% static 'ifgnapp/images/apple-touch-icon.png' %}" />
+<meta property="twiter:card" content="summary_large_image" />
+<meta name="twitter:image:alt" content="Institute of Forensic Graphology, Nigeria logo" />
+<style>
+  /* hero image styling... */
+#hero_img_wrap{
+height: 100%;
+width: 100%;
+display: flex;
+background-color: transparent;
+border-radius: 2rem;
+position: absolute;
+top: 0px;
+box-sizing: border-box;
+left: 0px;
+overflow: hidden;
+transform: scale(0, 0);
+opacity: 0;
+animation: imgslip 0.2s linear 0.7s 1;
+animation-fill-mode: forwards;
+transition: .5s;
+}
+#hero_img{
+position: absolute; height: 100%; width: 100%; top: 0px; right: 0px; box-sizing: border-box; display: flex; justify-content: center; align-items: center; background-size: cover; background-image: url({% static 'ifgnapp/images/doc-bg2.jpg' %}); background-position: center; background-repeat: no-repeat;
+}
+@keyframes imgslip {
+0%{
+transform: scale(0, 0);
+opacity: 0;
+}
+100%{
+transform: scale(1, 1);
+opacity: 1;
+} 
+}
+@media screen and (max-width: 550px){
+  #hero_img{
+    background-image: url({% static 'ifgnapp/images/doc-bg3.jpg' %}); 
+  }
+  
+  #about_img_holder {
+    min-height: 360px !important;
+    }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- <article id="top_hero_wrapper" style="background-color: transparent;">
+    <aside id="hero_img">
+
+    </aside>
+
+     <section id="top_hero_txt_wrap" style="z-index: 20;">
+        <strong class="top_info_txt"> <span class="short_line"></span> <span>St. Mary's Hospital & Maternity</span> </strong>
+        <h1 class="in_page_header" style='text-align: left; margin: 0.5rem 0px 1.5rem 0px; font-size: 4rem; font-family: "Poetsen One", sans-serif; font-style: normal;'>Healthcare and maternity services</h1>
+        <p class="inpage_txt">Superior healthcare and compassionate maternity services. From routine check-ups to specialized care, your well-being is our priority at Institute of Forensic Graphology, Nigeria, Abakpa Nike Enugu, Nigeria.</p>
+        <a href="tel:+2349028576165" style="text-decoration: none; margin-top: 2rem;">
+          <span class="page_btn">
+           Call Us Now
+         </span>
+         </a>
+        
+        
+     </section> -->
+
+
+    
+     <!-- Right image hero section.... -->
+     <!-- image holder.. -->
+     <!-- <div id="top_hero_img_wrap">
+
+         <aside id="hero_img_wrap" style="visibility: hidden;">
+            <img style="width: auto; height: 100%;" src="{% static 'ifgnapp/images/doctor1.png' %}" alt="Institute of Forensic Graphology, Nigeria Image">
+         </aside>
+        </div>
+</article>
+
+<article id="big_sect"> -->
+
+    <!-- Our Initiatives.. -->
+<!--  
+  <article class="inpage_sect" style="background-color: #fff;">
+
+    <section id="init_box_holder">
+      <div class="our_init_box_wrap" num-data-content="01">
+        <div style="display: flex; justify-content: center; align-items: center; box-sizing: border-box;">
+            <span class="our_init_img_wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" height="100%" fill="currentColor" viewBox="0 -960 960 960" width="100%"><path d="M350-63q-46 0-82.5-24T211-153q-16 21-40.5 32.5T120-109q-51 0-85.5-35T0-229q0-43 28-77.5T99-346q-14-20-21.5-42.5T70-436q0-40 20.5-75t57.5-57q5 18 13.5 38.5T181-494q-14 11-22 26.5t-8 32.5q0 56 46 69t87 21l19 32q-11 32-19 54.5t-8 40.5q0 30 21.5 52.5T350-143q38 0 63-34t41-80q16-46 24.5-93t13.5-72l78 21q-9 45-22 103t-36.5 110.5Q488-135 449.5-99T350-63ZM120-189q17 0 28.5-11.5T160-229q0-17-11.5-28.5T120-269q-17 0-28.5 11.5T80-229q0 17 11.5 28.5T120-189Zm284-158q-46-41-83.5-76.5t-64.5-69q-27-33.5-41.5-67T200-629q0-65 44.5-109.5T354-783q4 0 7 .5t7 .5q-4-10-6-20t-2-21q0-50 35-85t85-35q50 0 85 35t35 85q0 11-2 20.5t-6 19.5h14q60 0 102 38.5t50 95.5q-18-3-40.5-3t-41.5 2q-7-23-25.5-38T606-703q-35 0-54.5 20.5T498-623h-37q-35-41-54.5-60.5T354-703q-32 0-53 21t-21 53q0 23 13 47.5t36.5 52q23.5 27.5 57 58.5t74.5 67l-57 57Zm76-436q17 0 28.5-11.5T520-823q0-17-11.5-28.5T480-863q-17 0-28.5 11.5T440-823q0 17 11.5 28.5T480-783ZM609-63q-22 0-43.5-6T524-88q11-14 22-33t20-35q11 7 22 10t22 3q32 0 53.5-22.5T685-219q0-19-8-41t-19-54l19-32q42-8 87.5-21t45.5-69q0-40-29.5-58T716-512q-42 0-98 16t-131 41l-21-78q78-25 139-42t112-17q69 0 121 41t52 115q0 25-7.5 47.5T861-346q43 5 71 39.5t28 77.5q0 50-34.5 85T840-109q-26 0-50.5-11.5T749-153q-20 42-56.5 66T609-63Zm232-126q17 0 28-11.5t11-28.5q0-17-11.5-29T840-270q-17 0-28.5 11.5T800-230q0 17 12 29t29 12Zm-721-40Zm360-594Zm360 593Z"/></svg>
+                </span>
+                <b class="init_header">Professional/Friendly <br> Staffs</b>
+            </div>
+
+        <p class="init_txt">
+          At our hospital and maternity home, we take great pride in our friendly and compassionate staff, who are dedicated to delivering exceptional care to every patient.
+        </p>
+      </div>
+        
+        <div class="our_init_box_wrap" num-data-content="02">
+            <div style="display: flex; justify-content: center; align-items: center; box-sizing: border-box;">
+                <span class="our_init_img_wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 -960 960 960" width="100%" fill="currentColor"><path d="M280-80v-200H80v-400h200v-200h400v200h200v400H680v200H280ZM160-520h200q10 0 19 5t14 13l35 52 54-162q4-12 14.5-20t23.5-8q10 0 19 5t14 13l68 102h179v-80H600v-200H360v200H160v80Zm200 360h240v-200h200v-80H600q-10 0-19-5t-15-13l-34-52-54 162q-4 12-15 20t-24 8q-10 0-19-5t-14-13l-68-102H160v80h200v200Zm120-320Z"/></svg>   
+                    </span>
+                    <b class="init_header">Advanced/quality <br> Equipments</b>
+                </div>
+    
+            <p class="init_txt">
+              Our hospital features state-of-the-art medical technology and modern facilities, ensuring the highest quality of care and the best possible outcomes.
+            </p>
+          </div>
+
+            
+       <div class="our_init_box_wrap" num-data-content="03">
+        <div style="display: flex; justify-content: center; align-items: center; box-sizing: border-box;">
+            <span class="our_init_img_wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" height="100%" fill="currentColor" viewBox="0 -960 960 960" width="100%"><path d="M420-340h120v-100h100v-120H540v-100H420v100H320v120h100v100Zm60 260q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q104-33 172-132t68-220v-189l-240-90-240 90v189q0 121 68 220t172 132Zm0-316Z"/></svg>
+                
+                </span>
+                <b class="init_header">Comfortable/Safe <br> Environment</b>
+            </div>
+
+        <p class="init_txt">
+          At St. Mary's Hospital & Maternity we ensures a comfortable and safe environment, prioritizing patient well-being with top-tier cleanliness and security. 
+        </p>
+      </div>
+
+    </section>
+  </article>
+ 
+  <article class="inpage_sect">
+
+    <article id="about_pane_wrapper">
+
+      <article id="about_pane_txt_wrap">
+        <article>
+            <strong class="top_info_txt"> <span class="short_line"></span> <span>About Us</span> </strong>
+          <h3 class="in_page_header" style="text-align: left;">
+            About Institute of Forensic Graphology, Nigeria
+          </h3>
+
+          <p class="inpage_txt">Institute of Forensic Graphology, Nigeria, a trusted name in healthcare located at 129 Nike, Enugu, Nigeria. Our facility is renowned for its dedication to providing top-tier medical services, particularly in the field of maternity care. <br>
+            With a team of highly skilled healthcare professionals and state-of-the-art facilities, we ensure the well-being and safety of our patients at every stage of their healthcare journey.</p>
+          <br> <br>
+
+        </article>
+
+        <a href="#" style="text-decoration: none; margin-top: 2rem;">
+          <span class="page_btn">
+            Learn more
+         </span>
+         </a>
+      </article>
+
+      
+      <article id="about_img_holder">
+
+      
+      <aside id="about_img_wrap">
+        <img src="{% static 'ifgnapp/images/hospitalb2.jpg' %}" alt="St Mary's Hospital">
+      </aside>
+
+      </article>
+        
+
+    </article>
+  </article> -->
+
+
+<!-- Our medical services.. -->
+<!-- <article class="inpage_sect" style="background-color: #ffffff; overflow: hidden;">
+    <section class="inpage_header_wrapper">
+        <strong class="top_info_txt"> <span class="short_line"></span> <span>Our Expertise</span> </strong>
+        <h3 class="in_page_header">
+           Our Medical Services
+          </h3>
+
+        </section>
+    
+        <section id="med_serve_box_wrap">
+
+           <div class="med_serve_info_box" onclick="show_serve_info(this)" _name="Marternity" _txt="
+           Experience unparalleled maternity care at Institute of Forensic Graphology, Nigeria, proudly recognized as one of Nigeria's foremost healthcare institutions. With a rich legacy spanning over 50 years, our hospital boasts a stellar reputation for excellence. Each month, we welcome an average of 30 or more precious newborns into the world, delivering compassionate care and support to mothers and families. Trust us to be your unwavering partner throughout your maternity journey, providing comprehensive services tailored to your needs." _img="{% static 'ifgnapp/images/maternity.jpg' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 -960 960 960"><path d="M400-80v-200h-80v-280q0-50 35-85t85-35q50 0 85 35t35 85q36 15 58 48t22 72v160H520v200H400Zm40-640q-33 0-56.5-23.5T360-800q0-33 23.5-56.5T440-880q33 0 56.5 23.5T520-800q0 33-23.5 56.5T440-720Z"/></svg>
+                <strong>Marternity</strong>
+           </div>
+
+
+           <div class="med_serve_info_box" onclick="show_serve_info(this)" _name="Dentistry" _txt="At St. Mary's Maternity and Hospital, we recognize the integral role that oral health plays in overall well-being. Our dedicated dentistry department is committed to providing comprehensive dental care services tailored to meet the diverse needs of our patients. From preventive treatments to restorative procedures and cosmetic enhancements, we offer a wide range of dental services to ensure optimal oral health for individuals of all ages." _img="{% static 'ifgnapp/images/dentist.jpg' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 -960 960 960"><path d="M680-875q66 0 113 47t47 113q0 11-1.5 29.5T834-643l-55 403q-5 38-34.5 62T677-154q-23 0-42.5-10T602-192L495-348q-2-4-6.5-5.5T479-355q-4 0-16 9L359-195q-14 20-34.5 30.5T281-154q-38 0-67-24.5T180-241l-54-402q-3-24-4.5-42.5T120-715q0-66 47-113t113-47q36 0 57.5 9.5T379-845q20 11 42.5 20.5T480-815q36 0 58.5-9.5T581-845q20-11 42-20.5t57-9.5Zm0 80q-23 0-40.5 9.5T601-765q-21 11-49 20.5t-72 9.5q-44 0-72-9.5T359-765q-21-11-38.5-20.5T280-795q-33 0-56.5 23.5T200-715q0 8 1 23t4 35l55 405q1 8 7 12.5t14 4.5q5 0 9-2t6-6l101-148q14-20 36-32t47-12q25 0 47 12t36 32l103 151q2 3 5 4.5t7 1.5q8 0 14.5-4.5T700-251l55-406q3-20 4-35t1-23q0-33-23.5-56.5T680-795ZM480-515Z"/></svg>
+                <strong>Dentistry </strong>
+           </div>
+
+
+           <div class="med_serve_info_box" onclick="show_serve_info(this)" _name="Cardiology" _txt="Cardiology is not merely a medical specialty but a cornerstone of holistic healthcare. At St. Mary's Maternity and Hospital, our integrated approach to cardiology exemplifies our dedication to promoting heart health and fostering wellness in our community. Whether you're seeking preventive guidance, diagnostic evaluation, or advanced treatment options, rest assured that our cardiology team is here to support you every step of the way. Your heart deserves the best care, and at St. Mary's, we're committed to delivering excellence in cardiac services." _img="{% static 'ifgnapp/images/cardiology.jpg' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+              <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857q.09.083.176.171a3 3 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01zM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5"/>
+              <path d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162z"/>
+            </svg>
+                <strong>Cardiology</strong>
+           </div>
+
+
+           <div class="med_serve_info_box" onclick="show_serve_info(this)" _name="Blood Screening" _txt="At St. Mary's Maternity and Hospital, we are committed to providing comprehensive and personalized healthcare services to our patients. Our blood screening services are conducted with the utmost precision and efficiency, ensuring accurate results and timely interventions when necessary. Whether you require routine screening or specialized diagnostic tests, you can trust our experienced team to deliver exceptional care and support every step of the way." _img="{% static 'ifgnapp/images/bloodtest.jpg' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 -960 960 960"><path d="M480-80q-137 0-228.5-94T160-408q0-100 79.5-217.5T480-880q161 137 240.5 254.5T800-408q0 140-91.5 234T480-80Zm0-80q104 0 172-70.5T720-408q0-73-60.5-165T480-774Q361-665 300.5-573T240-408q0 107 68 177.5T480-160Zm-120-80h240v-80H360v80Zm80-120h80v-80h80v-80h-80v-80h-80v80h-80v80h80v80Zm40-120Z"/></svg>
+                <strong>Blood Screening</strong>
+           </div>
+
+
+           <div class="med_serve_info_box" onclick="show_serve_info(this)" _name="Radiology" _txt="In the realm of modern healthcare, diagnostic imaging plays a pivotal role in uncovering hidden truths about our health. At St. Mary's Maternity and Hospital, we understand the significance of radiology in providing accurate and timely diagnoses, guiding treatment decisions, and ultimately improving patient outcomes. Through our state-of-the-art radiology department, we offer a comprehensive array of imaging services to meet the diverse needs of our patients." _img="{% static 'ifgnapp/images/radioimg.jpg' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-560H200v560Zm160 0v-72l-72-84q-11-11-19.5-30t-8.5-44q0-13 2.5-25.5T271-440q-5-11-8-23.5t-3-26.5q0-25 8.5-44t19.5-30l72-84v-72h60v83q0 5-7 19l-80 94q-7 8-10 16.5t-3 17.5q0 20 13 34.5t33 14.5q9 0 17-3t14-10q17-17 38.5-26t44.5-9q23 0 44.5 9t38.5 26q7 7 15 10t16 3q20 0 33-14.5t13-33.5q0-9-3.5-17.5T627-523l-80-95q-4-4-5.5-9t-1.5-10v-83h60v72l73 86q14 16 20.5 34.5T700-489q0 13-3.5 25.5T688-440q6 12 9 24.5t3 25.5q0 25-8.5 44T672-316l-72 84v72h-60v-83q0-6 7-19l80-94q7-8 10-17t3-18q-11 5-22 7.5t-23 2.5q-20 0-40-8t-35-24q-7-8-17.5-12t-22.5-4q-11 0-21.5 4T440-413q-15 16-34.5 24t-39.5 8q-12 0-23.5-2.5T320-391q0 9 3 18t10 17l80 94q3 5 5 9.5t2 9.5v83h-60Zm-160 0v-560 560Z"/></svg>
+                <strong>Radiology</strong>
+           </div>
+
+        </section> -->
+
+        <!-- Box to display our medical services.. -->
+        <!-- <section id="med_serve_displ_box">
+               <div id="med_serve_img_box">
+                  <img src="{% static 'ifgnapp/images/maternity.jpg' %}" alt="St. Mary's Maternity Image">
+               </div>
+
+               <div id="med_serve_txt_box">
+                <h2>Marternity</h2>
+                  <p>
+                    Experience unparalleled maternity care at Institute of Forensic Graphology, Nigeria, proudly recognized as one of Nigeria's foremost healthcare institutions. With a rich legacy spanning over 50 years, our hospital boasts a stellar reputation for excellence. Each month, we welcome an average of 30 or more precious newborns into the world, delivering compassionate care and support to mothers and families. Trust us to be your unwavering partner throughout your maternity journey, providing comprehensive services tailored to your needs.
+                  </p>
+               </div>
+        </section>
+
+</article> -->
+
+<script>
+  // data to display our information..
+
+  // Our service data..
+ var _recnt_box;
+ var has_clk_box = false;
+  function show_serve_info(info) {
+    // to border the currently clicked box and remove the recntly clicked one if any ..
+    let _info = info;
+    _info.style.border = '2px solid var(--main-color)';
+    if(has_clk_box === true){
+      _recnt_box.style.border = 'none';
+    }else{
+      // ...
+    }
+    // infomations gathered from the currently clicked box..
+    let disp_box = document.getElementById("med_serve_displ_box");
+    let _info_name = _info.getAttribute('_name');
+    let _info_txt = _info.getAttribute('_txt');
+    let _info_img = _info.getAttribute('_img');
+
+    disp_box.style.opacity = '0';
+    disp_box.children[0].children[0].src = _info_img;
+    disp_box.children[1].children[0].innerText = _info_name;
+    disp_box.children[1].children[1].innerText = _info_txt;
+
+
+    // run some animation before display...
+    setTimeout(() => {
+      disp_box.style.opacity = '1';
+    }, 300);
+    // alert(`${_info_name} ==== ${_info_img} ===== ${_info_txt}`) 
+    // re
+    _recnt_box = info;
+    has_clk_box = true;
+  }
+</script>
+<!-- End of this section.. -->
+
+
+<!-- Contact us and colored bg pane... -->
+<!-- <section class="inpage_sect cross_banner">
+  <aside style="display: block; position: absolute; height: 100%; width: 100%; background-size: cover; 
+  background-repeat: no-repeat; opacity: 0.66;
+  background-position: center; top: 0px; left: 0px; background-image: url({% static 'ifgnapp/images/doc-img2.jpg' %}); ">
+  
+  </aside>
+  <div class="cross_banner_inner"> 
+    <b class="cross_banner_bigtxt">Your Health is Our Priority!</b>
+      <span class="center_txt">We are always available to make you feel better, Feel free to contact us.</span>
+  </div>
+
+  <a href="/contact-us/#map" style="text-decoration: none;  margin-top: 3rem; z-index: 50;">
+    <span class="page_btn" style="border: 2px solid var(--main-color); background-color: rgba(255, 255, 255, 0.724); color: var(--main-color);">
+      Visit or call us
+   </span>
+   </a>
+  </section>
+  -->
+  
+  {% if facility %}
+<!-- Our Hospital Facitities.. -->
+<article class="inpage_sect" style="background-color: #fff;">
+    <section class="inpage_header_wrapper">
+        <strong class="top_info_txt"> <span class="short_line"></span> <span>Facilities</span> </strong>
+        <h3 class="in_page_header">
+           Our Hospital Facitities 
+          </h3>
+    </section>
+
+    <section id="facili_holder">
+
+      {% for fac in facility %}
+      <section class="facili_box_wrapper" title="{{ fac.name }}">
+          <div class="facili_img_wrapper">
+            <img src="/media/{{ fac.image }}" alt="{{ fac.name }}">
+          </div>
+          <h3>{{ fac.name }}</h3>
+          <p>
+            {{ fac.des }}
+          </p>
+      </section>
+      
+      {% endfor %} 
+    </section>
+    
+</article>
+<!-- End of this section.. -->
+{% else %}
+{% endif %}
+
+{% if img_gal %}
+<!-- Image and media gallery.. -->
+<article class="inpage_sect">
+    <section class="inpage_header_wrapper">
+        <strong class="top_info_txt"> <span class="short_line"></span> <span>Images and Media</span> </strong>
+        <h3 class="in_page_header">
+           Our Media Gallery
+          </h3>
+    </section>
+
+
+    <article id="img_gal_holder" class="page_max_width">
+       
+      {% for img in img_gal %}
+        <span class="mls_img_holder" onclick="view_img('/media/{{img.image}}')">
+          <img width="100%" height="auto" src="/media/{{img.image}}" alt="{{img.name}}">
+        </span>
+         {% endfor %} 
+
+      </article>
+      <br>
+      <a href="/images/gallery/" style="text-decoration: none; margin-top: 2rem;">
+      <span class="page_btn">
+       More Images
+     </span>
+     </a>
+     
+      <!-- Box to use in displaying images full screen..  -->
+      <aside id="img_full_viewbox" onclick="close_img()">
+        <img src="{% static 'ifgnapp/images/hospital2.jpg' %}" alt="St Mary's Hospital Images">
+
+        <span onclick="close_img()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+          </svg></span>
+      </aside>
+
+      <script>
+        
+        // for showing images full size..
+        const img_view_wrapper = document.getElementById("img_full_viewbox");
+        var is_open = false;
+        function view_img(url) {
+          let img_link = url;
+          
+          img_view_wrapper.children[0].setAttribute('src', img_link); 
+            img_view_wrapper.style.display = 'flex';
+            setTimeout(() => {
+              img_view_wrapper.style.transform = 'scale(1, 1)';
+              
+            }, 300);
+            img_view_wrapper.style.cursor = 'zoom-out';
+           
+        }
+        // close our image....
+        function close_img() {
+          img_view_wrapper.style.cursor = 'zoom-in'; 
+          img_view_wrapper.style.display = 'none';
+          
+          setTimeout(() => {
+            img_view_wrapper.style.transform = 'scale(0, 0)';
+            
+          }, 300);
+          img_view_wrapper.style.display = 'none';
+        }
+
+      </script>
+    
+</article>
+<!-- End of this section.. -->
+{% else %}
+<!-- No Images! -->
+{% endif %}
+
+
+
+{% if post %}
+
+<!-- articles and latest update.. -->
+  <article class="inpage_sect" style="background-color: #fff;">
+    <section class="inpage_header_wrapper">
+        <strong class="top_info_txt"> <span class="short_line"></span> <span>Blog and Update</span> </strong>
+        <h3 class="in_page_header">
+            Featured Stories <span style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: var(--main-color);"> & Latest Resources </span> 
+          </h3>
+    </section>
+
+
+ <article class="article_box_wrapper">
+
+   {% for post in post %}
+   <!-- article wrapper.. -->
+  <a href="{{ post.get_absolute_url }}" class="article_wrapper">
+    <!-- article image.. -->
+    <div class="article_img_wrap">
+    <img style="width: auto; height: 105%; opacity: 0.85;" src="/media/{{post.image1}}" alt="{{ post.name }}">
+    </div>
+    
+    <div class="article_txt_wrapper">
+        <span class="article_tag">{{ post.category }}</span>
+        <!-- article writing.. -->
+        <p class="article_txt">
+            {{ post.title }}
+        </p>
+
+        <span class="artic_arrow_wrapper">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                </svg>
+            </span>
+        </span>
+    </div>
+
+   </a>
+{% endfor %}
+   <!-- the end.. -->
+ </article>
+ <a href="/blog/" style="text-decoration: none; margin-top: 2rem;">
+ <span class="page_btn">
+  Explore More
+</span>
+</a>
+</article>
+{% else %}
+<!-- No article! -->
+{% endif %}
+
+</article>
+
+{% endblock %}

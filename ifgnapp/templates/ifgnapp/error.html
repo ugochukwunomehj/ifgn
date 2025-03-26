@@ -1,0 +1,27 @@
+
+{% extends 'ifgnapp/base.html' %}
+{% load static %}
+
+{% block title %} 
+Error Page
+{% endblock %}
+
+{% block metadata %}     
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://ifgn-institute.org{{request.path_info}}" />
+  
+{% endblock %}
+
+{% block content %}
+
+<article id="big_sect" style="height: 100vh; padding-top: 5rem;">
+
+    
+  <aside style="display: flex; justify-content: center; align-items: center; height: 100%; flex-direction: column; width: 100%; box-sizing: border-box; ">
+    <span style="font-size: 7rem; font-weight: 900; text-align: center; margin-bottom: 2rem; color: var(--main-color);">4<b style="color: var(--main-color2);">0</b>4</span>
+
+     <p style="font-size: 3.5rem; text-align: center; font-weight: bolder; color: var(--main-color2);">Sorry, Page Not Found!</p>
+  </aside>
+       
+</article>
+{% endblock %}

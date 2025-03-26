@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Institute of Forensic Graphology, Nigeria</title>
+    <link>https://ifgn-institute.org/</link>
+    <atom:link href="https://ifgn-institute.org/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <description><![CDATA[Institute of Forensic Graphology, Nigeria: Africa's leading institute in forensic handwriting analysis, providing expert training, certification, and investigative solutions with integrity and scientific precision. Ink doesn't lie, we prove it!]]></description>
+   <language>en-US</language>
+
+<image>
+<title>Institute of Forensic Graphology, Nigeria</title>
+<link>https://ifgn-institute.org/</link>
+<url>https://ifgn-institute.org/static/ifgnapp/images/favicon-32x32.png</url>
+<width>32</width>
+<height>32</height>
+</image>
+
+
+{% if posts %}
+{% for i in posts %}
+    <item>
+      <title>{{i.title}}</title>
+      <link>https://ifgn-institute.org{{i.get_absolute_url}}</link>
+      <guid isPermaLink="true">https://ifgn-institute.org{{i.get_absolute_url}}</guid>
+      <category><![CDATA[{{i.category}}]]></category>
+      <description><![CDATA[{{i.meta}}]]></description>
+      <pubDate>{{i.pub_date | date:"r"}}</pubDate>
+      <enclosure url="https://ifgn-institute.org/media/{{i.image1}}" type="image/jpeg" length="14330"></enclosure>
+    </item>
+{% endfor %}
+{% else %} {% endif %}
+</channel>
+</rss>

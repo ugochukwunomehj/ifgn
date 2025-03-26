@@ -1,0 +1,124 @@
+{% extends 'ifgnapp/base.html' %}
+{% load static %}
+
+{% block title %} 
+Our Image Gallery | Institute of Forensic Graphology, Nigeria
+{% endblock %}
+
+{% block metadata %}     
+<meta name="description" content="Institute of Forensic Graphology, Nigeria pictures and image gallery, explore our environment, facilities, work, and hospital photos here." />
+<link rel="canonical" href="https://ifgn-institute.org{{request.path_info}}" /> 
+<meta name="keywords" content="Our Image gallery, pictures, hospital photos, ST. Marys' Hospital and Maternity images, Medical pictures, Hospital in Enugu Nigeria" />              
+<meta property="og:site_name" content="Institute of Forensic Graphology" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Our Image Gallery - Institute of Forensic Graphology, Nigeria" />
+<meta property="og:description" content="Institute of Forensic Graphology, Nigeria pictures and image gallery" />
+<meta property="og:image" content="https://ifgn-institute.org{% static 'ifgnapp/images/apple-touch-icon.png' %}" />
+<meta property="og:locale" content="en_us" />
+<meta property="og:url" content="https://ifgn-institute.org{{request.path_info}}" />
+<meta name="twitter:site" content="@Institute of Forensic Graphology, Nigeria" />
+<meta name="twitter:title" content="Our Image Gallery - Institute of Forensic Graphology, Nigeria" />
+<meta name="twitter:description" content="Institute of Forensic Graphology, Nigeria pictures and image gallery" />
+<meta name="twitter:creator" content="@withubb" />
+<meta name="twitter:image" content="https://ifgn-institute.org{% static 'ifgnapp/images/apple-touch-icon.png' %}" />
+<meta property="twiter:card" content="summary_large_image" />
+<meta name="twitter:image:alt" content="Institute of Forensic Graphology, Nigeria logo" />
+{% endblock %}
+
+{% block content %}
+
+<article id="big_sect">
+
+  <section id="direction-wrap">
+    <aside style="display: block; position: absolute; height: 100%; width: 100%; background-size: cover; 
+    background-repeat: no-repeat; opacity: 0.66;
+    background-position: center; top: 0px; left: 0px; background-image: url({% static 'ifgnapp/images/doc-img2.jpg' %}); ">
+    
+  </aside>
+  
+  <aside id="rays"></aside>
+  <section id="top-page-txt-wrapper">
+    <h1> Our Image Gallery  </h1>
+    
+    <div id="top-page-txt-box">
+      
+      <a href="/">Home </a> 
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+      </svg>
+      <span> Our Image Gallery  </span>
+    </div>
+    <span id="down_arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 -960 960 960" width="100%" fill="currentColor"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+          </span>
+  </section>
+   
+    </section>
+    
+ <article id="sect-holder" style="margin-bottom: 5rem;">
+    
+  
+{% if img_gal %}
+<!-- Image and media gallery.. -->
+<article class="inpage_sect" style="background-color: transparent;">
+
+    <article id="img_gal_holder" class="page_max_width">
+       
+      {% for img in img_gal %}
+        <span class="mls_img_holder" onclick="view_img('/media/{{img.image}}')">
+          <img width="100%" height="auto" src="/media/{{img.image}}" alt="{{img.name}}">
+        </span>
+         {% endfor %} 
+
+      </article>
+     
+      <!-- Box to use in displaying images full screen..  -->
+      <aside id="img_full_viewbox" onclick="close_img()">
+        <img src="{% static 'ifgnapp/images/hospital2.jpg' %}" alt="St Mary's Hospital Images">
+
+        <span onclick="close_img()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+          </svg></span>
+      </aside>
+
+      <script>
+        
+        // for showing images full size..
+        const img_view_wrapper = document.getElementById("img_full_viewbox");
+        var is_open = false;
+        function view_img(url) {
+          let img_link = url;
+          
+          img_view_wrapper.children[0].setAttribute('src', img_link); 
+            img_view_wrapper.style.display = 'flex';
+            setTimeout(() => {
+              img_view_wrapper.style.transform = 'scale(1, 1)';
+              
+            }, 300);
+            img_view_wrapper.style.cursor = 'zoom-out';
+           
+        }
+        // close our image....
+        function close_img() {
+          img_view_wrapper.style.cursor = 'zoom-in'; 
+          img_view_wrapper.style.display = 'none';
+          
+          setTimeout(() => {
+            img_view_wrapper.style.transform = 'scale(0, 0)';
+            
+          }, 300);
+          img_view_wrapper.style.display = 'none';
+        }
+
+      </script>
+    
+</article>
+<!-- End of this section.. -->
+{% else %}
+<!-- No Images! -->
+{% endif %}
+
+
+</article>
+{% endblock %}
