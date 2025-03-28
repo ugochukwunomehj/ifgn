@@ -22,6 +22,9 @@ Our Image Gallery | Institute of Forensic Graphology, Nigeria
 <meta name="twitter:creator" content="@withubb" />
 <meta name="twitter:image" content="https://ifgn-institute.org{% static 'ifgnapp/images/apple-touch-icon.png' %}" />
 <meta property="twiter:card" content="summary_large_image" />
+<link rel="stylesheet" href="{% static 'pages-styles/contact.css' %}">
+<link rel="stylesheet" href="{% static 'scripts/contact.js' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <meta name="twitter:image:alt" content="Institute of Forensic Graphology, Nigeria logo" />
 {% endblock %}
 
@@ -29,96 +32,383 @@ Our Image Gallery | Institute of Forensic Graphology, Nigeria
 
 <article id="big_sect">
 
-  <section id="direction-wrap">
-    <aside style="display: block; position: absolute; height: 100%; width: 100%; background-size: cover; 
-    background-repeat: no-repeat; opacity: 0.66;
-    background-position: center; top: 0px; left: 0px; background-image: url({% static 'ifgnapp/images/doc-img2.jpg' %}); ">
-    
-  </aside>
-  
-  <aside id="rays"></aside>
-  <section id="top-page-txt-wrapper">
-    <h1> Our Image Gallery  </h1>
-    
-    <div id="top-page-txt-box">
-      
-      <a href="/">Home </a> 
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
-      </svg>
-      <span> Our Image Gallery  </span>
-    </div>
-    <span id="down_arrow">
-      <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 -960 960 960" width="100%" fill="currentColor"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-          </span>
-  </section>
-   
+  <body>
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero-overlay"></div>
+        <div class="container">
+            <div class="contact-hero-content">
+                <div class="hero-badge">Get In Touch</div>
+                <h1>Contact <span class="gradient-text">IFGN</span></h1>
+                <p>We're here to answer your questions and help you with your forensic document examination needs</p>
+            </div>
+        </div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
     </section>
-    
- <article id="sect-holder" style="margin-bottom: 5rem;">
-    
   
-{% if img_gal %}
-<!-- Image and media gallery.. -->
-<article class="inpage_sect" style="background-color: transparent;">
-
-    <article id="img_gal_holder" class="page_max_width">
-       
-      {% for img in img_gal %}
-        <span class="mls_img_holder" onclick="view_img('/media/{{img.image}}')">
-          <img width="100%" height="auto" src="/media/{{img.image}}" alt="{{img.name}}">
-        </span>
-         {% endfor %} 
-
-      </article>
-     
-      <!-- Box to use in displaying images full screen..  -->
-      <aside id="img_full_viewbox" onclick="close_img()">
-        <img src="{% static 'ifgnapp/images/hospital2.jpg' %}" alt="St Mary's Hospital Images">
-
-        <span onclick="close_img()">
-          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-          </svg></span>
-      </aside>
-
-      <script>
-        
-        // for showing images full size..
-        const img_view_wrapper = document.getElementById("img_full_viewbox");
-        var is_open = false;
-        function view_img(url) {
-          let img_link = url;
-          
-          img_view_wrapper.children[0].setAttribute('src', img_link); 
-            img_view_wrapper.style.display = 'flex';
-            setTimeout(() => {
-              img_view_wrapper.style.transform = 'scale(1, 1)';
-              
-            }, 300);
-            img_view_wrapper.style.cursor = 'zoom-out';
-           
-        }
-        // close our image....
-        function close_img() {
-          img_view_wrapper.style.cursor = 'zoom-in'; 
-          img_view_wrapper.style.display = 'none';
-          
-          setTimeout(() => {
-            img_view_wrapper.style.transform = 'scale(0, 0)';
+    <!-- Contact Information Section -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>123 Forensic Avenue<br>Victoria Island<br>Lagos, Nigeria</p>
+                    <a href="https://maps.google.com" target="_blank" class="card-link">Get Directions <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Main Office: +234-801-234-5678<br>Admissions: +234-802-345-6789</p>
+                    <a href="tel:+2348012345678" class="card-link">Call Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>General Inquiries: info@ifgn.ng<br>Admissions: admissions@ifgn.ng</p>
+                    <a href="mailto:info@ifgn.ng" class="card-link">Send Email <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Office Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday: 10:00 AM - 2:00 PM</p>
+                    <a href="#appointment" class="card-link">Book Appointment <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="contact-form-section">
+        <div class="container">
+            <div class="contact-form-container">
+                <div class="form-content">
+                    <div class="section-header text-left">
+                        <span class="section-subtitle">Send a Message</span>
+                        <h2>Get in Touch With Us</h2>
+                        <div class="underline align-left"></div>
+                    </div>
+                    <p class="form-intro">Have questions about our courses, services, or need a consultation? Fill out the form below and our team will get back to you within 24 hours.</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name*</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address*</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject*</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected>Select a subject</option>
+                                    <option value="course">Course Information</option>
+                                    <option value="service">Forensic Services</option>
+                                    <option value="consultation">Request a Consultation</option>
+                                    <option value="partnership">Partnership Opportunities</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message*</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">I consent to IFGN processing my data in accordance with the <a href="#">Privacy Policy</a>.</label>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact-image">
+                    <img src="https://images.unsplash.com/photo-1696603975568-4b9fe5642eb7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQzfHxraWxsaW5nJTIwc2NlbmVzfGVufDB8fDB8fHww" alt="IFGN Contact">
+                    <div class="image-accent"></div>
+                    <div class="contact-info-box">
+                        <h3>Need Urgent Assistance?</h3>
+                        <p>For time-sensitive forensic document examination needs:</p>
+                        <div class="urgent-contact">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+2348012345678">+234-801-234-5678</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Department Contacts Section -->
+    <section class="department-contacts">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Specialized Contacts</span>
+                <h2>Department Contacts</h2>
+                <div class="underline"></div>
+            </div>
             
-          }, 300);
-          img_view_wrapper.style.display = 'none';
-        }
+            <div class="departments-grid">
+                <div class="department-card">
+                    <div class="department-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Admissions & Enrollment</h3>
+                    <p>For course registration, admissions requirements, and enrollment inquiries.</p>
+                    <div class="department-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:admissions@ifgn.ng">admissions@ifgn.ng</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+2348023456789">+234-802-345-6789</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="department-card">
+                    <div class="department-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Forensic Services</h3>
+                    <p>For document examination services, case consultations, and expert witness requests.</p>
+                    <div class="department-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:services@ifgn.ng">services@ifgn.ng</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+2348034567890">+234-803-456-7890</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="department-card">
+                    <div class="department-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Faculty & Research</h3>
+                    <p>For academic inquiries, research collaboration, and faculty contact information.</p>
+                    <div class="department-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:faculty@ifgn.ng">faculty@ifgn.ng</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+2348045678901">+234-804-567-8901</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="department-card">
+                    <div class="department-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partnerships & Media</h3>
+                    <p>For partnership opportunities, media inquiries, and speaking engagements.</p>
+                    <div class="department-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:partnerships@ifgn.ng">partnerships@ifgn.ng</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+2348056789012">+234-805-678-9012</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Location</span>
+                <h2>Find Us</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-frame">
+                    <!-- Replace with actual Google Maps embed code -->
+                    <!-- <img src="/placeholder.svg?height=500&width=1200" alt="IFGN Location Map" class="map-placeholder"> -->
+                    <div class="map-overlay">
+                        <div class="overlay-content">
+                            <h3>Interactive Map Coming Soon</h3>
+                            <p>Our office is located in Victoria Island, Lagos, Nigeria</p>
+                            <a href="https://maps.google.com" target="_blank" class="btn-secondary">
+                                <span>Get Directions</span>
+                                <i class="fas fa-directions"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-details">
+                    <div class="location-card">
+                        <h3>Main Campus</h3>
+                        <div class="location-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>123 Forensic Avenue<br>Victoria Island<br>Lagos, Nigeria</p>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-bus"></i>
+                                <p>Accessible via public transportation<br>Bus routes: 25, 34, 42</p>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-car"></i>
+                                <p>Parking available on premises<br>Visitor parking: South entrance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Common Questions</span>
+                <h2>Frequently Asked Questions</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How quickly can I expect a response to my inquiry?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We strive to respond to all inquiries within 24 business hours. For urgent matters related to forensic services, please call our main office directly at +234-801-234-5678.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do I need to make an appointment to visit your campus?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we recommend scheduling an appointment for campus visits to ensure that appropriate staff members are available to assist you. You can schedule a visit by calling our main office or using the contact form on this page.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I submit documents for examination?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Document submission procedures depend on the nature of the case. Please contact our Forensic Services department at services@ifgn.ng for specific instructions. We have strict protocols for maintaining chain of custody and document integrity.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I request a consultation before enrolling in a course?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer pre-enrollment consultations to help prospective students determine the most appropriate course for their professional goals. Contact our Admissions department at admissions@ifgn.ng to schedule a consultation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Connect Section -->
+    <section class="connect-section">
+        <div class="connect-overlay"></div>
+        <div class="container">
+            <div class="connect-content">
+                <h2>Connect With <span class="gradient-text">IFGN</span></h2>
+                <p>Follow us on social media for updates, insights, and forensic document examination resources</p>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                </div>
+                
+                <div class="newsletter-signup">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Stay updated with our latest news, events, and forensic insights</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email Address" required>
+                            <button type="submit" class="btn-primary">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+  </body>
 
-      </script>
-    
-</article>
-<!-- End of this section.. -->
-{% else %}
-<!-- No Images! -->
-{% endif %}
-
-
-</article>
 {% endblock %}

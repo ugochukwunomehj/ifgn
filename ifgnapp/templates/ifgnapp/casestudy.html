@@ -21,130 +21,560 @@ Our Services | Institute of Forensic Graphology, Nigeria
 <meta name="twitter:creator" content="@withubb" />
 <meta name="twitter:image" content="https://ifgn-institute.org{% static 'ifgnapp/images/apple-touch-icon.png' %}" />
 <meta property="twiter:card" content="summary_large_image" />
+<link rel="stylesheet" href="{% static 'pages-styles/case-studies.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <meta name="twitter:image:alt" content="Institute of Forensic Graphology, Nigeria logo" />
 {% endblock %}
 
 {% block content %}
 
 <article id="big_sect">
-
-  <section id="direction-wrap">
-    <aside style="display: block; position: absolute; height: 100%; width: 100%; background-size: cover; 
-    background-repeat: no-repeat; opacity: 0.66;
-    background-position: center; top: 0px; left: 0px; background-image: url({% static 'ifgnapp/images/doc-img2.jpg' %}); ">
-    
-  </aside>
-  
-  <aside id="rays"></aside>
-  <section id="top-page-txt-wrapper">
-    <h1> Case Studies: Our Actions </h1>
-    
-    <div id="top-page-txt-box">
-      <a href="/">Home </a> 
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
-      </svg>
-      <span> Case Studies </span>
-    </div>
-    <span id="down_arrow">
-<svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 -960 960 960" width="100%" fill="currentColor"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-    </span>
-  </section>
-   
+    <!-- Case Studies Hero Section -->
+    <section class="case-hero">
+        <div class="case-hero-overlay"></div>
+        <div class="container">
+            <div class="case-hero-content">
+                <div class="hero-badge">Real-World Applications</div>
+                <h1>Forensic Graphology <span class="gradient-text">Case Studies</span></h1>
+                <p>Explore how our expertise in document examination has solved complex cases and delivered justice</p>
+                <div class="hero-search">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search case studies...">
+                    </div>
+                    <button class="btn-primary">
+                        <span>Search</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
     </section>
-    
- <article id="sect-holder" style="margin-bottom: 5rem;">
-
-
-    <!-- Our services.. -->
-<article class="inpage_sect">
   
-<!--  
-        <section class="med_serve_displ_box" style="margin-top: 1rem !important;">
-               <div class="med_serve_img_box">
-                  <img src="{% static 'ifgnapp/images/maternity.jpg' %}" alt="St. Mary's Maternity Image">
-               </div>
-
-               <div class="med_serve_txt_box">
-                <h2>Marternity</h2>
-                  <p>
-                    Our Maternity Care is one of the best Maternity in Nigeria. With over 30 new born babies deliveries every month and over 50 years of experience. We can pose as your reliable ally in terms of Maternity Care.
-                  </p>
-               </div>
-        </section>
-
-
-        <section class="med_serve_displ_box">
-               <div class="med_serve_img_box">
-                  <img src="{% static 'ifgnapp/images/radioimg.jpg' %}" alt="St. Mary's Maternity Image">
-               </div>
-
-               <div class="med_serve_txt_box">
-                <h2>Radiology</h2>
-                  <p>
-                    Our Maternity Care is one of the best Maternity in Nigeria. With over 30 new born babies deliveries every month and over 50 years of experience. We can pose as your reliable ally in terms of Maternity Care.
-                  </p>
-               </div>
-        </section>
-
+    <!-- Case Studies Filter Section -->
+    <section class="case-filter">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-title">
+                    <h3>Filter Case Studies</h3>
+                </div>
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <label>Category:</label>
+                        <select id="category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="banking">Banking & Finance</option>
+                            <option value="legal">Legal & Court</option>
+                            <option value="corporate">Corporate Fraud</option>
+                            <option value="government">Government & Public</option>
+                            <option value="historical">Historical Documents</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Industry:</label>
+                        <select id="industry-filter">
+                            <option value="all">All Industries</option>
+                            <option value="finance">Financial Services</option>
+                            <option value="legal">Legal Services</option>
+                            <option value="government">Government</option>
+                            <option value="education">Education</option>
+                            <option value="corporate">Corporate</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Sort By:</label>
+                        <select id="sort-filter">
+                            <option value="recent">Most Recent</option>
+                            <option value="popular">Most Popular</option>
+                            <option value="complexity">Complexity</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Featured Case Study Section -->
+    <section class="featured-case">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Featured Case</span>
+                <h2 class="page-title">The Lagos Banking Fraud Investigation</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="featured-case-content">
+                <div class="featured-case-image">
+                    <!-- <img src="/placeholder.svg?height=600&width=800" alt="Banking Fraud Case"> -->
+                    <div class="case-badge">Banking & Finance</div>
+                </div>
+                <div class="featured-case-details">
+                    <div class="case-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Completed: March 2022</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Lead Examiner: Dr. James Wilson</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-building"></i>
+                            <span>Client: Major Nigerian Bank</span>
+                        </div>
+                    </div>
+                    <div class="case-summary">
+                        <h3>Case Summary</h3>
+                        <p>A major Nigerian bank discovered a series of suspicious transactions totaling over ₦500 million across multiple branches. The transactions were authorized with signatures that appeared to match those of account holders, but the account holders denied making the transactions.</p>
+                        <p>IFGN was engaged to examine over 200 questioned documents to determine the authenticity of the signatures and identify potential forgeries.</p>
+                    </div>
+                    <div class="case-approach">
+                        <h3>Our Approach</h3>
+                        <ul class="approach-list">
+                            <li><i class="fas fa-check-circle"></i> Comprehensive examination of all questioned signatures using VSC technology</li>
+                            <li><i class="fas fa-check-circle"></i> Comparison with known genuine signatures from bank records</li>
+                            <li><i class="fas fa-check-circle"></i> Analysis of writing pressure, line quality, and formation characteristics</li>
+                            <li><i class="fas fa-check-circle"></i> Digital enhancement and microscopic examination of suspicious elements</li>
+                        </ul>
+                    </div>
+                    <div class="case-outcome">
+                        <h3>Outcome</h3>
+                        <p>Our examination revealed that 85% of the questioned signatures were sophisticated forgeries created by a small group of individuals. We identified unique characteristics that linked the forgeries to three bank employees working across different branches.</p>
+                        <p>The evidence was presented in court, leading to the conviction of the perpetrators and the recovery of ₦420 million in stolen funds.</p>
+                    </div>
+                    <div class="case-actions">
+                        <a href="#" class="btn-primary">
+                            <span>Read Full Case Study</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#" class="btn-secondary">
+                            <span>Download PDF</span>
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Case Studies Grid Section -->
+    <section class="case-grid">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Work</span>
+                <h2>Recent Case Studies</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="cases-wrapper">
+                <!-- Case Study 1 -->
+                <div class="case-card" data-category="legal" data-industry="legal">
+                    <div class="case-image">
+                        <!-- <img src="/placeholder.svg?height=400&width=600" alt="Will Contestation Case"> -->
+                        <div class="case-badge">Legal & Court</div>
+                    </div>
+                    <div class="case-content">
+                        <h3>Contested Will Authentication</h3>
+                        <p class="case-excerpt">Examination of a contested will in a high-profile inheritance case involving assets worth over ₦2 billion.</p>
+                        <div class="case-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>January 2023</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-building"></i>
+                                <span>Legal Services</span>
+                            </div>
+                        </div>
+                        <div class="case-footer">
+                            <a href="#" class="read-more">Read Case Study <i class="fas fa-long-arrow-alt-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+  
+                <!-- Case Study 2 -->
+                <div class="case-card" data-category="corporate" data-industry="corporate">
+                    <div class="case-image">
+                        <!-- <img src="/placeholder.svg?height=400&width=600" alt="Corporate Fraud Case"> -->
+                        <div class="case-badge">Corporate Fraud</div>
+                    </div>
+                    <div class="case-content">
+                        <h3>Executive Document Forgery</h3>
+                        <p class="case-excerpt">Investigation of forged executive approvals for fraudulent procurement contracts at a multinational corporation.</p>
+                        <div class="case-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>November 2022</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-building"></i>
+                                <span>Corporate</span>
+                            </div>
+                        </div>
+                        <div class="case-footer">
+                            <a href="#" class="read-more">Read Case Study <i class="fas fa-long-arrow-alt-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+  
+                <!-- Case Study 3 -->
+                <div class="case-card" data-category="government" data-industry="government">
+                    <div class="case-image">
+                        <!-- <img src="/placeholder.svg?height=400&width=600" alt="Election Document Case"> -->
+                        <div class="case-badge">Government & Public</div>
+                    </div>
+                    <div class="case-content">
+                        <h3>Election Document Verification</h3>
+                        <p class="case-excerpt">Analysis of disputed electoral documents and signature verification for a gubernatorial election petition.</p>
+                        <div class="case-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>August 2022</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-building"></i>
+                                <span>Government</span>
+                            </div>
+                        </div>
+                        <div class="case-footer">
+                            <a href="#" class="read-more">Read Case Study <i class="fas fa-long-arrow-alt-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+  
+                <!-- Case Study 4 -->
+                <div class="case-card" data-category="banking" data-industry="finance">
+                    <div class="case-image">
+                        <!-- <img src="/placeholder.svg?height=400&width=600" alt="Check Fraud Case"> -->
+                        <div class="case-badge">Banking & Finance</div>
+                    </div>
+                    <div class="case-content">
+                        <h3>Systematic Check Fraud Ring</h3>
+                        <p class="case-excerpt">Investigation of an organized check fraud operation targeting multiple financial institutions across Nigeria.</p>
+                        <div class="case-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>June 2022</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-building"></i>
+                                <span>Financial Services</span>
+                            </div>
+                        </div>
+                        <div class="case-footer">
+                            <a href="#" class="read-more">Read Case Study <i class="fas fa-long-arrow-alt-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+  
+                <!-- Case Study 5 -->
+                <div class="case-card" data-category="historical" data-industry="education">
+                    <div class="case-image">
+                        <!-- <img src="/placeholder.svg?height=400&width=600" alt="Historical Document Case"> -->
+                        <div class="case-badge">Historical Documents</div>
+                    </div>
+                    <div class="case-content">
+                        <h3>Colonial Era Document Authentication</h3>
+                        <p class="case-excerpt">Authentication of historical documents from Nigeria's colonial period for a national museum exhibition.</p>
+                        <div class="case-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>April 2022</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-building"></i>
+                                <span>Education</span>
+                            </div>
+                        </div>
+                        <div class="case-footer">
+                            <a href="#" class="read-more">Read Case Study <i class="fas fa-long-arrow-alt-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+  
+                <!-- Case Study 6 -->
+                <div class="case-card" data-category="legal" data-industry="legal">
+                    <div class="case-image">
+                        <!-- <img src="/placeholder.svg?height=400&width=600" alt="Contract Dispute Case"> -->
+                        <div class="case-badge">Legal & Court</div>
+                    </div>
+                    <div class="case-content">
+                        <h3>High-Value Contract Dispute</h3>
+                        <p class="case-excerpt">Examination of disputed signatures on a ₦1.5 billion construction contract between two major corporations.</p>
+                        <div class="case-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>February 2022</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-building"></i>
+                                <span>Legal Services</span>
+                            </div>
+                        </div>
+                        <div class="case-footer">
+                            <a href="#" class="read-more">Read Case Study <i class="fas fa-long-arrow-alt-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <a href="#" class="page-prev"><i class="fas fa-chevron-left"></i></a>
+                <a href="#" class="page-number active">1</a>
+                <a href="#" class="page-number">2</a>
+                <a href="#" class="page-number">3</a>
+                <a href="#" class="page-next"><i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Case Study Process Section -->
+    <section class="case-process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Methodology</span>
+                <h2>The IFGN Case Study Process</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Initial Consultation</h3>
+                        <p>We begin with a thorough consultation to understand the case requirements, objectives, and specific document examination needs.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Document Collection & Preservation</h3>
+                        <p>Proper handling and preservation of questioned documents and known exemplars using forensic protocols to maintain evidence integrity.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Scientific Examination</h3>
+                        <p>Comprehensive analysis using advanced equipment including VSC technology, digital microscopy, and specialized measurement tools.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Comparative Analysis</h3>
+                        <p>Detailed comparison of questioned documents with known exemplars, focusing on writing characteristics, pressure patterns, and unique identifiers.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Documentation & Reporting</h3>
+                        <p>Preparation of comprehensive, court-admissible reports with detailed findings, supporting evidence, and expert conclusions.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">06</div>
+                    <div class="step-content">
+                        <h3>Expert Testimony</h3>
+                        <p>When required, our certified examiners provide expert witness testimony in court, presenting findings with clarity and professional authority.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Testimonials Section -->
+    <section class="case-testimonials">
+        <div class="testimonial-overlay"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Client Feedback</span>
+                <h2>What Our Clients Say</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-navigation">
+                    <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="testimonial-wrapper">
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"The expertise provided by IFGN was instrumental in our successful prosecution of a major fraud case. Their meticulous analysis and clear presentation of evidence in court was exceptional. The jury was able to understand complex forensic concepts thanks to their clear explanations."</p>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://images.unsplash.com/photo-1620932934088-fbdb2920e484?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QWZyaWNhbiUyMG1hbnxlbnwwfHwwfHx8MA%3D%3D" alt="Barrister Adebayo">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Barrister Adebayo Johnson</h4>
+                                    <p>Senior Prosecutor, Lagos State Ministry of Justice</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"When our bank discovered potentially fraudulent signatures across multiple branches, IFGN's rapid response and thorough investigation helped us identify the perpetrators and strengthen our security protocols. Their work saved us millions in potential losses."</p>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://images.unsplash.com/photo-1573496527892-904f897eb744?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEFmcmljYW4lMjB3b21hbnxlbnwwfHwwfHx8MA%3D%3D" alt="Mrs. Okonkwo">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Mrs. Amina Okonkwo</h4>
+                                    <p>Head of Security, First Continental Bank</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"The authentication of our historical document collection by IFGN experts provided crucial validation for our museum exhibition. Their attention to detail and respect for delicate historical materials was impressive, and their findings added significant value to our educational program."</p>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://images.unsplash.com/photo-1614023342667-6f060e9d1e04?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QWZyaWNhbiUyMG1hbnxlbnwwfHwwfHx8MA%3D%3D" alt="Dr. Ibrahim">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Dr. Mohammed Ibrahim</h4>
+                                    <p>Curator, National Museum of Nigerian History</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Contact CTA Section -->
+    <section class="case-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Expert Document <span class="gradient-text">Examination?</span></h2>
+                <p>Our team of certified forensic document examiners is ready to assist with your case</p>
+                <div class="cta-buttons">
+                    <a href="index.html#contact" class="btn-primary">
+                        <span>Contact Us</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        <span>Request a Consultation</span>
+                        <i class="fas fa-calendar-check"></i>
+                    </a>
+                </div>
+                <div class="cta-contact">
+                    <p>For urgent inquiries, call us at <a href="tel:+2348012345678">+234-801-234-5678</a> or email <a href="mailto:cases@ifgn.ng">cases@ifgn.ng</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('.hamburger').classList.toggle('active');
+        });
+  
+        // Case Studies Filtering
+        const categoryFilter = document.getElementById('category-filter');
+        const industryFilter = document.getElementById('industry-filter');
+        const sortFilter = document.getElementById('sort-filter');
+        const caseCards = document.querySelectorAll('.case-card');
         
-        <section class="med_serve_displ_box">
-               <div class="med_serve_img_box">
-                  <img src="{% static 'ifgnapp/images/bloodtest.jpg' %}" alt="St. Mary's Maternity Image">
-               </div>
+        function filterCases() {
+            const selectedCategory = categoryFilter.value;
+            const selectedIndustry = industryFilter.value;
+            
+            caseCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                const cardIndustry = card.getAttribute('data-industry');
+                
+                const categoryMatch = selectedCategory === 'all' || cardCategory === selectedCategory;
+                const industryMatch = selectedIndustry === 'all' || cardIndustry === selectedIndustry;
+                
+                if (categoryMatch && industryMatch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        categoryFilter.addEventListener('change', filterCases);
+        industryFilter.addEventListener('change', filterCases);
+        sortFilter.addEventListener('change', filterCases);
+  
+        // Testimonial slider functionality
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        
+        let currentIndex = 0;
+        
+        function showSlide(index) {
+            // Hide all slides
+            testimonialSlides.forEach(slide => slide.classList.remove('active'));
+            // Remove active class from all indicators
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Show the slide at the specified index
+            testimonialSlides[index].classList.add('active');
+            // Add active class to the corresponding indicator
+            indicators[index].classList.add('active');
+            
+            currentIndex = index;
+        }
+        
+        // Add click event listeners to indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+        
+        // Add click event listeners to navigation buttons
+        prevBtn.addEventListener('click', () => {
+            let newIndex = currentIndex - 1;
+            if (newIndex < 0) {
+                newIndex = testimonialSlides.length - 1;
+            }
+            showSlide(newIndex);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            let newIndex = currentIndex + 1;
+            if (newIndex >= testimonialSlides.length) {
+                newIndex = 0;
+            }
+            showSlide(newIndex);
+        });
+        
+        // Auto-slide functionality
+        setInterval(() => {
+            let newIndex = currentIndex + 1;
+            if (newIndex >= testimonialSlides.length) {
+                newIndex = 0;
+            }
+            showSlide(newIndex);
+        }, 5000);
+    </script>
 
-               <div class="med_serve_txt_box">
-                <h2>Blood Screening</h2>
-                  <p>
-                    Our Maternity Care is one of the best Maternity in Nigeria. With over 30 new born babies deliveries every month and over 50 years of experience. We can pose as your reliable ally in terms of Maternity Care. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio illo nihil quis est voluptas qui? Molestias doloremque ducimus porro, accusantium similique nulla dicta commodi quod dolor delectus obcaecati accusamus est! <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, consequatur? Iste cum saepe tempora beatae consequatur. Aspernatur ratione placeat natus rem. Doloribus fugiat maiores libero rerum asperiores iusto tenetur reiciendis.
-                  </p>
-               </div>
-        </section>
-
-        <section class="med_serve_displ_box">
-               <div class="med_serve_img_box">
-                  <img src="{% static 'ifgnapp/images/cardiology.jpg' %}" alt="St. Mary's Maternity Image">
-               </div>
-
-               <div class="med_serve_txt_box">
-                <h2>Cardiology</h2>
-                  <p>
-                    Our Maternity Care is one of the best Maternity in Nigeria. With over 30 new born babies deliveries every month and over 50 years of experience. We can pose as your reliable ally in terms of Maternity Care.
-                  </p>
-               </div>
-        </section>
-
-        <section class="med_serve_displ_box">
-               <div class="med_serve_img_box">
-                  <img src="{% static 'ifgnapp/images/dentist.jpg' %}" alt="St. Mary's Maternity Image">
-               </div>
-
-               <div class="med_serve_txt_box">
-                <h2>Dentistry</h2>
-                  <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa sit doloremque asperiores cupiditate corrupti ex eos similique exercitationem, voluptates illum fuga suscipit sequi laboriosam nobis molestiae facere sed aliquam molestias. <br>
-                    Our Maternity Care is one of the best Maternity in Nigeria. With over 30 new born babies deliveries every month and over 50 years of experience. We can pose as your reliable ally in terms of Maternity Care.
-                  </p>
-               </div>
-        </section>
-
-        <section class="med_serve_displ_box">
-               <div class="med_serve_img_box">
-                  <img src="{% static 'ifgnapp/images/maternity.jpg' %}" alt="St. Mary's Maternity Image">
-               </div>
-
-               <div class="med_serve_txt_box">
-                <h2>Marternity</h2>
-                  <p>
-                    Our Maternity Care is one of the best Maternity in Nigeria. With over 30 new born babies deliveries every month and over 50 years of experience. We can pose as your reliable ally in terms of Maternity Care.
-                  </p>
-               </div>
-        </section> -->
-
-</article>
-
-<!-- End of this section.. -->
-          
-</article>
 
 </article>
 {% endblock %}
