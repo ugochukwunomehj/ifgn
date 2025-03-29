@@ -126,15 +126,12 @@ Corporate Fellow, Institute of Forensic Graphology'''
     name = models.CharField('full name of member:', max_length=200, unique=True)
     title = models.CharField('member\'s title:', max_length=70)
     des = models.TextField('biography of member:')
-    m_type = models.CharField('Membership Categories and Post Nominal Designators:', max_length=20, choices=COURSE_CATEGORIES)
-    # num_students = models.SmallIntegerField("Number of Students", default=0)
-    # num_views = models.IntegerField("Number of views", default=0)
-    # price = models.SmallIntegerField("Course price:", default=0)
+    m_type = models.CharField('Membership Categories and Post Nominal Designators:', max_length=200, choices=COURSE_CATEGORIES)
     image = models.ImageField('member image:', upload_to='member-images/')
-    vidfile = models.FileField("Course video:", upload_to="course-video/")
-    date = models.DateTimeField('publication date')
+    vidfile = models.FileField("Member Certificate:", upload_to="member-files/")
+    date = models.DateTimeField('publication date:')
     is_img_edited = models.BooleanField('to track edited images', default=False)
-    is_published = models.BooleanField('click this to publish image', default=False)
+    is_published = models.BooleanField('click this to publish member:', default=False)
     
     class Meta:
         ordering = ['-date'] 
