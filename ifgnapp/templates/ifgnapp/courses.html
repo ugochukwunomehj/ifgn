@@ -29,36 +29,7 @@ Our Premium Courses | Master Forensic Handwriting Analysis - Institute of Forens
 {% block content %}
 
 <article id="big_sect">
-<<<<<<< HEAD
 
-  <section id="direction-wrap">
-    <aside style="display: block; position: absolute; height: 100%; width: 100%; background-size: cover; 
-    background-repeat: no-repeat; opacity: 0.66;
-    background-position: center; top: 0px; left: 0px; background-image: url({% static 'ifgnapp/images/doc-img2.jpg' %}); ">
-    
-  </aside>
-  
-  <section id="top-page-txt-wrapper">
-    <h1> Our Premium Courses  </h1>
-    
-    <div id="top-page-txt-box">
-      
-      <a href="/">Home </a> 
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
-      </svg>
-      <span> Our Premium Courses </span>
-    </div>
-    <span id="down_arrow">
-      <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 -960 960 960" width="100%" fill="currentColor"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-      </span>
-  </section>
-   
-    </section>
-    <article class="inpage_sect">
-
-    </article>
-=======
     <!-- Split Hero Section -->
     <section class="split-hero">
         <div class="hero-left">
@@ -88,7 +59,7 @@ Our Premium Courses | Master Forensic Handwriting Analysis - Institute of Forens
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat">
-                        <div class="stat-number">95%</div>
+                        <div class="stat-number">99%</div>
                         <div class="stat-label">Success Rate</div>
                     </div>
                 </div>
@@ -959,10 +930,10 @@ Our Premium Courses | Master Forensic Handwriting Analysis - Institute of Forens
 
     <script>
         // Mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-            document.querySelector('.hamburger').classList.toggle('active');
-        });
+        // document.querySelector('.menu-toggle').addEventListener('click', function() {
+        //     document.querySelector('.nav-links').classList.toggle('active');
+        //     document.querySelector('.hamburger').classList.toggle('active');
+        // });
 
         // Category cards functionality
         const categoryCards = document.querySelectorAll('.category-card');
@@ -1052,13 +1023,10 @@ Our Premium Courses | Master Forensic Handwriting Analysis - Institute of Forens
         });
     </script>
 
->>>>>>> f19ecff9150bebcbeb8f5eb1c34cc53df4b06407
+
     
-    {% if course %}
-    <!-- Our Hospital Facitities.. -->
-    <article class="inpage_sect">
-    
-        <section id="facili_holder">
+    <!-- {% if course %}
+  
     
           {% for fac in course %}
           <section class="facili_box_wrapper" title="{{ fac.name }}">
@@ -1074,10 +1042,10 @@ Our Premium Courses | Master Forensic Handwriting Analysis - Institute of Forens
           {% endfor %} 
         </section>
         
-    </article>
-    <!-- End of this section.. -->
+   
     {% else %}
-    {% endif %}
+    {% endif %} -->
+    
     
 
 </article>

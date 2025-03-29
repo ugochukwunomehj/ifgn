@@ -1,361 +1,481 @@
-
 {% extends 'ifgnapp/base.html' %}
 {% load static %}
 
 {% block title %} 
-Contact Us | Institute of Forensic Graphology, Nigeria.
+Contact Us | Institute of Forensic Graphology, Nigeria
 {% endblock %}
 
 {% block metadata %}     
-<meta name="description" content="Want to talk to us directly? use the form on this page to send us a message. Institute of Forensic Graphology, Nigeria.." />
-<link rel="canonical" href="https://ifgn-institute.org{{request.path_info}}" />               
-<meta property="og:site_name" content="Institute of Forensic Graphology, Nigeria" />
+<meta name="description" content="Explore our Image Gallery showcasing forensic handwriting analysis, document examination, expert investigations, and training sessions at the Institute of Forensic Graphology, Nigeria. See forensic expertise in action." />
+<link rel="canonical" href="https://ifgn-institute.org{{request.path_info}}" /> 
+<meta name="keywords" content="forensic handwriting images, handwriting analysis gallery, forensic document examination photos, signature verification samples, forensic investigation visuals, forensic training pictures, handwriting analysis Nigeria, Institute of Forensic Graphology gallery" />              
+<meta property="og:site_name" content="Institute of Forensic Graphology" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Contact Us - Institute of Forensic Graphology, Nigeria." />
-<meta property="og:description" content="Want to talk to us directly? use the form on this page to send us a message." />
+<meta property="og:title" content="Our Image Gallery - Institute of Forensic Graphology, Nigeria" />
+<meta property="og:description" content="Institute of Forensic Graphology, Nigeria pictures and image gallery" />
 <meta property="og:image" content="https://ifgn-institute.org{% static 'ifgnapp/images/apple-touch-icon.png' %}" />
 <meta property="og:locale" content="en_us" />
 <meta property="og:url" content="https://ifgn-institute.org{{request.path_info}}" />
 <meta name="twitter:site" content="@ifgnofficial" />
-<meta name="twitter:title" content="Contact Us - Institute of Forensic Graphology, Nigeria." />
-<meta name="twitter:description" content="Want to talk to us directly? use the form on this page to send us a message." />
+<meta name="twitter:title" content="Our Image Gallery - Institute of Forensic Graphology, Nigeria" />
+<meta name="twitter:description" content="Institute of Forensic Graphology, Nigeria pictures and image gallery" />
 <meta name="twitter:creator" content="@withubb" />
 <meta name="twitter:image" content="https://ifgn-institute.org{% static 'ifgnapp/images/apple-touch-icon.png' %}" />
 <meta property="twiter:card" content="summary_large_image" />
-<meta name="twitter:image:alt" content="Institute of Forensic Graphology, Nigeria. logo" />
-<script>
-  // funtion for handling pop messagess...
-  //it takes two parameters, your msg, your msg status{'success', 'warning', or 'failed'} respectively..
-function pop_mgs(_txt, sts='success'){
-  var _crv= document.createElement('div');
-  document.body.appendChild(_crv);
-  _crv.style.display='flex';
-  _crv.setAttribute('id', 'pop-b-cover');
- if(sts === 'success'){
-   _crv.style.color='#2c912c';
-   _crv.innerHTML = `<aside id="pop-box"> 
-      <span id="pop-ico">
-          <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 24 24" width="100%" fill="currentColor"><path d="M0 0h24v24H0V0zm0 0h24v24H0V0z" fill="none"/><path d="M16.59 7.58L10 14.17l-3.59-3.58L5 12l5 5 8-8zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg>
-          </span> <span> ${_txt} </span> </aside>`;
- }else if(sts === 'warning'){
-   _crv.style.color='#f48805';
-   _crv.innerHTML = `<aside id="pop-box"> <span id="pop-ico">
-          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 16 16"> <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/> <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/> </svg> </span> <span> ${_txt} </span> </aside>`;
- }else if(sts === 'failed'){
-   _crv.style.color='#df3a3a';
-   _crv.innerHTML = `<aside id="pop-box"> <span id="pop-ico"> <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 24 24" width="100%" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-  </span><span> ${_txt} </span> </aside>`; }
- _crv.addEventListener("click", () => {
-     _crv.style.display='none'; 
-     _has_c_doc = true; });
-   setTimeout(() => { _crv.style.display='none'; }, 3500);
-}        
-</script>
-
-<style>
-    
-/* pop msgs stylings */
-#pop-ico{
-  height: 40px;
-  width: 40px; 
-      box-sizing: border-box;
-      /* padding: 7px;  */
-      border-radius: 20px;
-      margin-bottom: 0.5rem; 
-      color: inherit;
-      background-color: inherit;
-      overflow: hidden;
-    }
-    #pop-box{
-      display: block; 
-      width: auto;
-      max-width: 200px;
-      padding: 1rem;
-      border-radius: 1rem;
-      color: inherit;
-      font-weight: bolder;
-      font-size: 1.1rem;
-      background-color: white; 
-      box-shadow: 10px 10px 100px rgb(156, 156, 156);
-      box-sizing: border-box; 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      z-index: 2000;
-      transition: .3s;
-  }
-  .anim-pop-box{
-      transform: scale(0);
-      opacity: 0;
-      animation: box-pop 0.5s linear 0s 1;
-      animation-fill-mode: forwards;
-      transition: .3s;
-    }
-    @keyframes box-pop {
-      0%{
-        transform: scale(0);
-        opacity: 0;
-      }100%{
-        opacity: 1;
-        transform: scale(1);
-      } 
-    }
-    #pop-b-cover{
-      color: #d0cfcf;
-      display: none;
-      justify-content: center;
-      align-items: center; 
-      width: 100%;
-      height: 100%;
-      position: fixed; 
-      box-sizing: border-box;
-      left: 0px; 
-      top: 0px; 
-      z-index: 200;
-    }
-    /* font-family: 'Bad Script', cursive; font-weight: lighter !important; font-size: 1.3rem !important; */
-</style>
+<link rel="stylesheet" href="{% static 'pages-styles/contact.css' %}">
+<link rel="stylesheet" href="{% static 'scripts/contact.js' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta name="twitter:image:alt" content="Institute of Forensic Graphology, Nigeria logo" />
 {% endblock %}
 
 {% block content %}
 
 <article id="big_sect">
 
-  <section id="direction-wrap">
-    <aside style="display: block; position: absolute; height: 100%; width: 100%; background-size: cover; 
-    background-repeat: no-repeat; opacity: 0.66;
-    background-position: center; top: 0px; left: 0px; background-image: url({% static 'ifgnapp/images/doc-img2.jpg' %}); ">
-    
-  </aside>
-  
-  <aside id="rays"></aside>
-  <section id="top-page-txt-wrapper">
-    <h1> Contact Us </h1>
-    
-    <div id="top-page-txt-box">
-      
-      <a href="/">Home </a> 
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
-      </svg>
-      <span> Contact Us </span>
-    </div>
-    <span id="down_arrow">
-      <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 -960 960 960" width="100%" fill="currentColor"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-          </span>
-  </section>
-   
+  <body>
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero-overlay"></div>
+        <div class="container">
+            <div class="contact-hero-content">
+                <div class="hero-badge">Get In Touch</div>
+                <h1>Contact <span class="gradient-text">IFGN</span></h1>
+                <p>We're here to answer your questions and help you with your forensic document examination needs</p>
+            </div>
+        </div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
     </section>
-    
- <article id="sect-holder" style="margin-bottom: 5rem;">
-    
-
-<!-- contact form.. -->
-<article id="box_holder" style="display: flex; padding: 1rem; padding-top: 0px; width: 100%; flex-direction: column; height: auto; justify-content: center; border-radius: 2rem; align-items: center; box-shadow: 0px 0px 5px #dddddd; box-sizing: border-box; max-width: 650px; margin: 4rem auto;">
-    <h2 id="form_head" class="cont-hd" style="text-align: left; padding-left: 1rem; font-size: 1.7rem; padding-bottom: 1rem;">
-        Send us a message
-  </h2>
-  <article id="form-wrap" style="box-sizing: border-box;">
-    
-    <aside class="frm_inner_wrap">
-        <label for="name">
-            Enter name
-        </label>
-        <input required placeholder="Enter your name.." type="text" class="edit_box" id="name">
-        </span>
-      </aside>
-
-      <aside class="frm_inner_wrap">
-        <label for="email">
-            Enter email
-        </label>
-        <input type="email" name="email" id="email" required placeholder="Enter your email here.." class="edit_box">
-      </aside>
-      
-      <aside class="frm_inner_wrap">
-        <label for="_country">
-            Enter country
-        </label>
-        <input required placeholder="Enter your country here.." type="text" class="edit_box" id="_country">
-        </span>
-      </aside>
-
-      <aside class="frm_inner_wrap">
-        <label for="msg">
-          Enter Message
-        </label>
-        <textarea placeholder="Tell us how we can serve you.." type="text" name="msg" class="txt_box" id="msg" rows="10" cols="40"></textarea>
-      </aside>
-
-      <aside class="site-btn" id="frm_btn">
-          <span>
-            Send Message
-            </span>
-        </aside>
-        
- </article>
-
-</article>
-    <script>
-      function _(c){ return document.getElementById(c);}
-      var f_name = _('name'), _email = _("email"), _fmsg = _("msg"), _country = _('_country'), _submit_btn = _('frm_btn');
-      const my_token = _('us_tkn').children[0].getAttribute("value");   
-      
-_submit_btn.addEventListener("click", () =>{
-    if(f_name.value.match(/\w+/) && _country.value.match(/\w+/) && _fmsg.value.match(/\w+/)){
-        
-        var _url = '/cntfrm/';
-        fetch(_url, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json',
-                'X-CSRFToken':  my_token,
-            },
-            body: JSON.stringify({
-                'reqtype': '{{ptype}}',
-                'name': `${f_name.value}`,
-                'msg': `${_fmsg.value}`,
-                'country': `${_country.value}`,
-                'email': `${_email.value}`,
-                 }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            // console.log('Success:', data);
-            if(data.S){
-                // pop_mgs(data.S, sts='success')
-                _('box_holder').style.textAlign='center';
-                _('box_holder').innerHTML=`
-                  <span style="font-size: 2.3rem; font-weight: 700; color: #0a770a;">
-                    Thank you!
-                    </span>
-                      <span style="font-size: 1.1rem; font-weight: bolder; max-width: 500px; color: #4d4d4d;">
-                   We have received your messages, and our medical team will get back to you as soon as possible, have a nice moment.
-              </span>`;
+  
+    <!-- Contact Information Section -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>123 Forensic Avenue<br>Victoria Island<br>Lagos, Nigeria</p>
+                    <a href="https://maps.google.com" target="_blank" class="card-link">Get Directions <i class="fas fa-arrow-right"></i></a>
+                </div>
                 
-            }else if(data.W){
-                pop_mgs(data.W, sts='warning')  
-            }else if(data.E){
-            pop_mgs(data.E, sts='failed')
-            }else{
-            pop_mgs('Sorry, an error occurred!', sts='failed')
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Main Office: +2349047427213<br>Admissions: +234-802-345-6789</p>
+                    <a href="tel:+2349047427213" class="card-link">Call Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>General Inquiries: info@ifgn.ng<br>Admissions: admissions@ifgn.ng</p>
+                    <a href="mailto:info@ifgn.ng" class="card-link">Send Email <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Office Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday: 10:00 AM - 2:00 PM</p>
+                    <a href="#appointment" class="card-link">Book Appointment <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="contact-form-section">
+        <div class="container">
+            <div class="contact-form-container">
+                <div class="form-content">
+                    <div class="section-header text-left">
+                        <span class="section-subtitle">Send a Message</span>
+                        <h2>Get in Touch With Us</h2>
+                        <div class="underline align-left"></div>
+                    </div>
+                    <p class="form-intro">Have questions about our courses, services, or need a consultation? Fill out the form below and our team will get back to you within 24 hours.</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name*</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address*</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject*</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected>Select a subject</option>
+                                    <option value="course">Course Information</option>
+                                    <option value="service">Forensic Services</option>
+                                    <option value="consultation">Request a Consultation</option>
+                                    <option value="partnership">Partnership Opportunities</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message*</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">I consent to IFGN processing my data in accordance with the <a href="#">Privacy Policy</a>.</label>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact-image">
+                    <img src="https://images.unsplash.com/photo-1696603975568-4b9fe5642eb7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQzfHxraWxsaW5nJTIwc2NlbmVzfGVufDB8fDB8fHww" alt="IFGN Contact">
+                    <div class="image-accent"></div>
+                    <div class="contact-info-box">
+                        <h3>Need Urgent Assistance?</h3>
+                        <p>For time-sensitive forensic document examination needs:</p>
+                        <div class="urgent-contact">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+2349047427213">+2349047427213</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Department Contacts Section -->
+    <section class="department-contacts">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Specialized Contacts</span>
+                <h2>Department Contacts</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="departments-grid">
+                <div class="department-card">
+                    <div class="department-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Admissions & Enrollment</h3>
+                    <p>For course registration, admissions requirements, and enrollment inquiries.</p>
+                    <div class="department-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:admissions@ifgn.ng">admissions@ifgn.ng</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+2349047427213">+2349047427213</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="department-card">
+                    <div class="department-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Forensic Services</h3>
+                    <p>For document examination services, case consultations, and expert witness requests.</p>
+                    <div class="department-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:services@ifgn.ng">services@ifgn.ng</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+2349047427213">+2349047427213</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="department-card">
+                    <div class="department-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Faculty & Research</h3>
+                    <p>For academic inquiries, research collaboration, and faculty contact information.</p>
+                    <div class="department-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:faculty@ifgn.ng">faculty@ifgn.ng</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+2349047427213">+2349047427213</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="department-card">
+                    <div class="department-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partnerships & Media</h3>
+                    <p>For partnership opportunities, media inquiries, and speaking engagements.</p>
+                    <div class="department-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:partnerships@ifgn.ng">partnerships@ifgn.ng</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+2349047427213">+2349047427213</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Location</span>
+                <h2>Find Us</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-frame">
+                    <!-- Replace with actual Google Maps embed code -->
+                    <!-- <img src="/placeholder.svg?height=500&width=1200" alt="IFGN Location Map" class="map-placeholder"> -->
+                    <div class="map-overlay">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.5934454503613!2d3.4059874999999997!3d6.4462131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b24437e7821%3A0x39e5e282475231ae!2s26%20King%20George%20V%20Rd%2C%20Lagos%20Island%2C%20Lagos%20102273%2C%20Lagos!5e0!3m2!1sen!2sng!4v1743266558576!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <!-- <div class="overlay-content">
+                            <h3>Interactive Map Coming Soon</h3>
+                            <p>Our office is located in Victoria Island, Lagos, Nigeria</p>
+                            <a href="https://maps.app.goo.gl/o6RNNSGbiXSJLue98" target="_blank" class="btn-secondary">
+                                <span>Get Directions</span>
+                                <i class="fas fa-directions"></i>
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+                
+                <div class="location-details">
+                    <div class="location-card">
+                        <h3>Our Head Office</h3>
+                        <div class="location-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>26, King George V Road, <br> Onikan, <br> Lagos Island</p>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-bus"></i>
+                                <p>Accessible via public transportation<br>Bus routes: 25, 34, 42</p>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-car"></i>
+                                <p>Parking available on premises<br>Visitor parking: South entrance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Common Questions</span>
+                <h2>Frequently Asked Questions</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How quickly can I expect a response to my inquiry?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We strive to respond to all inquiries within 24 business hours. For urgent matters related to forensic services, please call our main office directly at +2349047427213.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do I need to make an appointment to visit your campus?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we recommend scheduling an appointment for campus visits to ensure that appropriate staff members are available to assist you. You can schedule a visit by calling our main office or using the contact form on this page.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I submit documents for examination?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Document submission procedures depend on the nature of the case. Please contact our Forensic Services department at services@ifgn.ng for specific instructions. We have strict protocols for maintaining chain of custody and document integrity.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I request a consultation before enrolling in a course?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer pre-enrollment consultations to help prospective students determine the most appropriate course for their professional goals. Contact our Admissions department at admissions@ifgn.ng to schedule a consultation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Connect Section -->
+    <section class="connect-section">
+        <div class="connect-overlay"></div>
+        <div class="container">
+            <div class="connect-content">
+                <h2>Connect With <span class="gradient-text">IFGN</span></h2>
+                <p>Follow us on social media for updates, insights, and forensic document examination resources</p>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/instituteofforensicgraphology" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://x.com/ifgnofficial" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="https://www.linkedin.com/company/instituteofforensicgraphology" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.instagram.com/instituteofforensicgraphology" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://youtube.com/@withubb" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                </div>
+                
+                <div class="newsletter-signup">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Stay updated with our latest news, events, and forensic insights</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email Address" required>
+                            <button type="submit" class="btn-primary">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+<script>
+    
+// Mobile menu toggle
+// document.querySelector('.menu-toggle').addEventListener('click', function() {
+//     document.querySelector('.nav-links').classList.toggle('active');
+//     document.querySelector('.hamburger').classList.toggle('active');
+// });
+
+// Form validation
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Simple validation
+        let valid = true;
+        const requiredFields = contactForm.querySelectorAll('[required]');
+        
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                valid = false;
+                field.classList.add('error');
+            } else {
+                field.classList.remove('error');
             }
-        })
-        .catch((error) => {
-            // console.error('Error:', error);
-            pop_mgs(error, sts='failed')
         });
-
-}else{
-    pop_mgs('Invalid form, <br> please try again!', sts='failed')
+        
+        // Email validation
+        const emailField = document.getElementById('email');
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailField && !emailPattern.test(emailField.value)) {
+            valid = false;
+            emailField.classList.add('error');
+        }
+        
+        if (valid) {
+            // In a real implementation, you would send the form data to a server
+            alert('Thank you for your message! We will get back to you soon.');
+            contactForm.reset();
+        } else {
+            alert('Please fill in all required fields correctly.');
+        }
+    });
 }
-});
 
+// FAQ accordion functionality
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+        // Close all other FAQ items
+        faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+                otherItem.classList.remove('active');
+            }
+        });
+        
+        // Toggle current FAQ item
+        item.classList.toggle('active');
+    });
+});
 
 </script>
 
-  <style>
-    /* form styling.. */
-    :root{
-      --form-f-size:0.95rem;
-    }
-    #frm_btn{
-      background-color: var(--main-color);
-      color: var(--fair-white);
-      position: relative;
-      margin: auto;
-      box-sizing: border-box;
-      cursor: pointer;
-      padding: 1rem 2rem;
-      transition: all 0.7s;
-      border-radius: 5px;
-      font-size: 1rem;
-}
-#frm_btn:hover, #frm_btn:active, #frm_btn:focus{
-  opacity: 0.8;
-}
-#page-txt {
-    line-height: 1.5;
-    padding-top: 1rem;
-    text-align: left;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 1rem;
-    max-width: 100%;
-    box-sizing: border-box;
-    min-height: 500px;
-    color: #cecece;
-}
-.cont-hd {
-    position: relative;
-    width: 100%;
-    left: 0px;
-    line-height: 1.2;
-    height: auto;
-    box-sizing: border-box;
-    text-align: left;
-    font-size: 1.6rem;
-    margin: 2rem auto 0.5rem 0rem;
-    color: #c4c4c4;
-    padding: 0rem;
-    display: block;
-}
-.warn_highlight{
-  border: 2px solid #be5b36 !important;
-  color: #be5b36 !important;
-}
-.frm_inner_wrap{
-  width: 100%;
-  overflow-x: auto !important;
-}
-.edit_box, .txt_box{
-  min-height: 38px;
-  height: auto;
-  width: 100%;
-  display: block;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  box-sizing: border-box;
-  background-color: #2c2c2c;
-  border-radius: 5px;
-  text-align: left !important;
-  border: 2px solid #c3c2c2 !important;
-  outline: none;
-  overflow-y: auto;
-  color: var(--fair-black);
-}
-.txt_box{
-  border: 2px solid var(--fair-white); 
-}
-.frm_inner_wrap span{
-  text-align: left;
-  font-weight: bolder;
-  color: var(--fair-black);
-}
-#form-wrap{
-  width: 100%;
-  padding: var(--form-f-size);
-  height: auto;
-  box-sizing: border-box;
-  display: flex;
-  margin: auto;
-  border-radius: var(--form-f-size);
-  gap: var(--form-f-size);
-  flex-direction: column;
-}
-label{
-  color: var(--fair-white);
-  font-weight: bolder;
-}
-label::after{
-  content: '*';
-  color: var(--main-color2);
-}
-/* form styling end.. */
-  </style>           
-</article>
+  </body>
 
-</article>
 {% endblock %}

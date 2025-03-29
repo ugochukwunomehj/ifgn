@@ -23,37 +23,168 @@ Membership Directory | Certified Forensic Handwriting Experts - Institute of For
 <meta name="twitter:image" content="https://ifgn-institute.org{% static 'ifgnapp/images/apple-touch-icon.png' %}" />
 <meta property="twiter:card" content="summary_large_image" />
 <meta name="twitter:image:alt" content="Institute of Forensic Graphology, Nigeria logo" />
+<link rel="stylesheet" href="{% static 'pages-styles/about-page.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{% static 'pages-styles/contact.css' %}">
+<link rel="stylesheet" href="{% static 'scripts/contact.js' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta name="twitter:image:alt" content="Institute of Forensic Graphology, Nigeria logo" />
 {% endblock %}
 
 {% block content %}
 
 <article id="big_sect">
-
-  <section id="direction-wrap">
-    <aside style="display: block; position: absolute; height: 100%; width: 100%; background-size: cover; 
-    background-repeat: no-repeat; opacity: 0.66;
-    background-position: center; top: 0px; left: 0px; background-image: url({% static 'ifgnapp/images/doc-img2.jpg' %}); ">
-    
-  </aside>
-  
-  <aside id="rays"></aside>
-  <section id="top-page-txt-wrapper">
-    <h1> Our Membership Directory </h1>
-    
-    <div id="top-page-txt-box">
-      <a href="/">Home </a> 
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
-      </svg>
-      <span> Membership Directory  </span>
-    </div>
-    <span id="down_arrow">
-      <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 -960 960 960" width="100%" fill="currentColor"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-          </span>
-  </section>
-   
-    </section>
+ 
     <article class="inpage_sect">
+
+      <section class="contact-hero">
+        <div class="contact-hero-overlay"></div>
+        <div class="container">
+            <div class="contact-hero-content">
+                <div class="hero-badge">Our Members</div>
+                <h1>Members <span class="gradient-text">IFGN</span></h1>
+                <p>See our Experts and Executive Members</p>
+            </div>
+        </div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+    </section>
+
+      
+        <!-- Our Team Section -->
+        <section class="team-section">
+          <div class="container">
+              <div class="section-header fade-in">
+                  <span class="section-subtitle">Meet Our Experts</span>
+                  <h2>Leadership & Faculty</h2>
+                  <div class="underline"></div>
+              </div>
+              <div class="team-categories fade-in">
+                  <button class="team-category active" data-category="all">All</button>
+                  <button class="team-category" data-category="leadership">Leadership</button>
+                  <button class="team-category" data-category="faculty">Faculty</button>
+                  <button class="team-category" data-category="research">Research</button>
+              </div>
+              <div class="team-grid">
+                  <div class="team-card" data-category="leadership">
+                      <div class="team-image fade-in">
+                          <img src="https://images.unsplash.com/photo-1616805765352-beedbad46b2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8QWZyaWNhbiUyMG1hbnxlbnwwfHwwfHx8MA%3D%3D" alt="Dr. James Wilson">
+                          <div class="team-social">
+                              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                              <a href="#"><i class="fab fa-twitter"></i></a>
+                              <a href="#"><i class="fas fa-envelope"></i></a>
+                          </div>
+                      </div>
+                      <div class="team-info fade-in">
+                          <h3>Dr. James Wilson</h3>
+                          <p class="team-position">Founder & Director</p>
+                          <p class="team-bio">Dr. Wilson has over 25 years of experience in forensic document examination and has served as an expert witness in over 200 court cases across Africa and Europe.</p>
+                          <div class="team-credentials">
+                              <span><i class="fas fa-award"></i> Ph.D. Forensic Science</span>
+                              <span><i class="fas fa-certificate"></i> Certified Document Examiner</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="team-card fade-in" data-category="leadership">
+                      <div class="team-image">
+                          <img src="https://images.unsplash.com/photo-1588553693965-21878a40b5a1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fEFmcmljYW4lMjB3b21hbnxlbnwwfHwwfHx8MA%3D%3D" alt="Prof. Ugochukwu Joseph">
+                          <div class="team-social">
+                              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                              <a href="#"><i class="fab fa-twitter"></i></a>
+                              <a href="#"><i class="fas fa-envelope"></i></a>
+                          </div>
+                      </div>
+                      <div class="team-info">
+                          <h3>Prof. Ugochukwu Joseph</h3>
+                          <p class="team-position">Academic Director</p>
+                          <p class="team-bio">Prof. Joseph oversees all academic programs at IFGN. She specializes in digital document forensics and has published numerous research papers in international journals.</p>
+                          <div class="team-credentials">
+                              <span><i class="fas fa-award"></i> M.Sc. Digital Forensics</span>
+                              <span><i class="fas fa-certificate"></i> Certified Fraud Examiner</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="team-card fade-in" data-category="faculty">
+                      <div class="team-image">
+                          <img src="https://images.unsplash.com/photo-1614890094520-7b8dd0ec56d2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fEFmcmljYW4lMjBtYW58ZW58MHx8MHx8fDA%3D" alt="Dr. Michael Okafor">
+                          <div class="team-social">
+                              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                              <a href="#"><i class="fab fa-twitter"></i></a>
+                              <a href="#"><i class="fas fa-envelope"></i></a>
+                          </div>
+                      </div>
+                      <div class="team-info">
+                          <h3>Dr. Michael Okafor</h3>
+                          <p class="team-position">Lead Instructor, Signature Analysis</p>
+                          <p class="team-bio">Dr. Okafor is a renowned expert in signature verification and has trained banking security personnel across West Africa in fraud detection techniques.</p>
+                          <div class="team-credentials">
+                              <span><i class="fas fa-award"></i> Ph.D. Criminology</span>
+                              <span><i class="fas fa-certificate"></i> Banking Security Specialist</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="team-card fade-in" data-category="faculty">
+                      <div class="team-image">
+                          <img src="https://images.unsplash.com/photo-1563132305-24784f57eeea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fEFmcmljYW4lMjB3b21hbnxlbnwwfHwwfHx8MA%3D%3D" alt="Mrs. Amina Ibrahim">
+                          <div class="team-social">
+                              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                              <a href="#"><i class="fab fa-twitter"></i></a>
+                              <a href="#"><i class="fas fa-envelope"></i></a>
+                          </div>
+                      </div>
+                      <div class="team-info">
+                          <h3>Mrs. Amina Ibrahim</h3>
+                          <p class="team-position">Senior Instructor, Legal Applications</p>
+                          <p class="team-bio">With a background in both law and forensic science, Mrs. Ibrahim specializes in preparing expert witnesses for court testimony and legal document examination.</p>
+                          <div class="team-credentials">
+                              <span><i class="fas fa-award"></i> LL.B, Legal Practice</span>
+                              <span><i class="fas fa-certificate"></i> Certified Document Examiner</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="team-card fade-in" data-category="research">
+                      <div class="team-image">
+                          <img src="https://images.unsplash.com/photo-1508243529287-e21914733111?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fEFmcmljYW4lMjBtYW58ZW58MHx8MHx8fDA%3D" alt="Dr. David Adeyemi">
+                          <div class="team-social">
+                              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                              <a href="#"><i class="fab fa-twitter"></i></a>
+                              <a href="#"><i class="fas fa-envelope"></i></a>
+                          </div>
+                      </div>
+                      <div class="team-info">
+                          <h3>Dr. David Adeyemi</h3>
+                          <p class="team-position">Head of Research</p>
+                          <p class="team-bio">Dr. Adeyemi leads our research initiatives, focusing on developing new methodologies for document examination that meet international standards for court admissibility.</p>
+                          <div class="team-credentials">
+                              <span><i class="fas fa-award"></i> Ph.D. Forensic Chemistry</span>
+                              <span><i class="fas fa-certificate"></i> Research Methodologist</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="team-card fade-in" data-category="research">
+                      <div class="team-image">
+                          <img src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fEFmcmljYW4lMjB3b21hbnxlbnwwfHwwfHx8MA%3D%3D" alt="Ms. Grace Okonkwo">
+                          <div class="team-social">
+                              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                              <a href="#"><i class="fab fa-twitter"></i></a>
+                              <a href="#"><i class="fas fa-envelope"></i></a>
+                          </div>
+                      </div>
+                      <div class="team-info">
+                          <h3>Ms. Grace Okonkwo</h3>
+                          <p class="team-position">Research Associate, Digital Forensics</p>
+                          <p class="team-bio">Ms. Okonkwo specializes in digital signature verification and electronic document authentication, bringing cutting-edge technology to our research department.</p>
+                          <div class="team-credentials">
+                              <span><i class="fas fa-award"></i> M.Sc. Computer Forensics</span>
+                              <span><i class="fas fa-certificate"></i> Digital Evidence Specialist</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
 
     </article>
     
