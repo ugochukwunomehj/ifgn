@@ -1,9 +1,9 @@
 
 // Mobile menu toggle
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('active');
-    document.querySelector('.hamburger').classList.toggle('active');
-});
+// document.querySelector('.menu-toggle').addEventListener('click', function() {
+//     document.querySelector('.nav-links').classList.toggle('active');
+//     document.querySelector('.hamburger').classList.toggle('active');
+// });
 
 // Form validation
 const contactForm = document.getElementById('contactForm');

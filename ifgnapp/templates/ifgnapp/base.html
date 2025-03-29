@@ -22,6 +22,8 @@
    <link rel="stylesheet" href="{% static 'ifgnapp/styles/content.css' %}" /> 
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="{% static 'pages-styles/widget.css' %}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <script src="{% static 'ifgnapp/ajax/base.js' %}"></script>
     {% block css %} {% endblock %}  
@@ -428,8 +430,8 @@ color: var(--main-color);
           <a href="/contact-us/">Contact Us</a>
           <a href="/courses/">Courses</a>
           <a href="/case-studies/">Case Studies</a>
-          <a href="/images/gallery/">Gallery</a>
-          <a href="/blog/">Blog </a>
+          <a href="/images/gallery/">Contact</a>
+          <!-- <a href="/blog/">Blog </a> -->
         </div>
         
       </section>
@@ -468,7 +470,7 @@ color: var(--main-color);
         </article>
 
         <!-- Floating Chat box.. -->
-         <style>
+         <!-- <style>
           #chat-box{
             height: 50px;
             width: 50px;
@@ -485,8 +487,8 @@ color: var(--main-color);
             bottom: 3rem;
             right: 2rem;
           }
-         </style>
-         <a id="chat-box" href="" title="Chat with us">
+         </style> -->
+         <!-- <a id="chat-box" href="" title="Chat with us">
           <img style="height: 100%; width: 100%;" src="/wtp-icon.svg" alt="">
          </a>
         <aside id="notif_box">
@@ -499,7 +501,14 @@ color: var(--main-color);
                  font-size:14px; color:darkred; background-color:inherit;">x</span>
                 <button id="ok">ok got it</button>
                 
-            </aside>
+            </aside> -->
+
+             <!-- Simple WhatsApp Widget -->
+  <div class="whatsapp-widget">
+    <a href="https://wa.me/2348009886" target="_blank" class="whatsapp-button pulse">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
      
     <input type="hidden"  s="{{user_id}}" id="hd" name="ou">
 
