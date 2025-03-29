@@ -16,8 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from ifgnapp import seo_files, error_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('ifgnapp.urls'))
+    path('', include('ifgnapp.urls')),
+    path('manifest.json', seo_files.manifest_file),
+    path('opensearch.xml', seo_files.open_search),
+    path('robots.txt', seo_files.robot_file),
+    path('feed.xml', seo_files.feed),
+    path('sitemap.xml', seo_files.sitemap),
+    path('blog-sitemap.xml', seo_files.post_sitemap),
 ]
+
+handler404 = error_view.error_404
+handler500 = error_view.error_500
+handler403 = error_view.error_403
+handler400 = error_view.error_400

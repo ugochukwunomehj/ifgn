@@ -73,6 +73,76 @@ class course(models.Model):
         
     def __str__(self):
         return self.name 
+  
+  
+        
+class member(models.Model):
+    '''Post Nominal Designators for each membership category of the INSTITUTE OF FORENSIC GRAPHOLOGY, NIGERIA:
+
+Membership Categories and Post Nominal Designators:
+
+1. *Doctoral Fellow (DFIFG)*
+Doctoral Fellow, Institute of Forensic Graphology
+
+*2. Senior Fellow (SFIFG)*
+Senior Fellow, Institute of Forensic Graphology
+
+ *3. Fellow (FIFG)* Fellow, Institute of Forensic Graphology  
+
+*4. *Associate Fellow (AFIFG)*
+Associate Fellow, Institute of Forensic Graphology
+
+*5. *Research Fellow(RFIFG)*
+Research Fellow, Institute of Forensic Graphology
+
+*6. *Member (MIFG)*: Member , Institute of Forensic Graphology
+
+*7. *Associate Member (AMIFG)*: Associate Member , Institute of  Forensic IGraphology
+
+*8. Graduate Member( GMIFG)*
+Graduate Member, Institute of Forensic Graphology
+
+*9. Student Member ( SMIFG)*
+Student Member, Institute of Forensic Graphology
+
+*10. Corporate Member( CMIFG)*
+Corporate Member, Institute of Forensic Graphology
+
+*11. Corporate Fellow ( CFIFG)*
+Corporate Fellow, Institute of Forensic Graphology'''
+    COURSE_CATEGORIES = [
+    ('Doctoral Fellow (DFIFG)', 'Doctoral Fellow (DFIFG)'),
+    ('Senior Fellow (SFIFG)', 'Senior Fellow (SFIFG)'),
+    ('Fellow (FIFG)', 'Fellow (FIFG)'),
+    ('Associate Fellow (AFIFG)', 'Associate Fellow (AFIFG)'),
+    ('Research Fellow (RFIFG)', 'Research Fellow (RFIFG)'),
+    ('Member (MIFG)', 'Member (MIFG)'),
+    ('Associate Member (AMIFG)', 'Associate Member (AMIFG)'),
+    ('Graduate Member (GMIFG)', 'Graduate Member (GMIFG)'),
+    ('Student Member (SMIFG)', 'Student Member (SMIFG)'),
+    ('Corporate Member (CMIFG)', 'Corporate Member (CMIFG)'),
+    ('Corporate Fellow (CFIFG)', 'Corporate Fellow (CFIFG)'),
+]
+    name = models.CharField('full name of member:', max_length=200, unique=True)
+    title = models.CharField('member\'s title:', max_length=70)
+    des = models.TextField('biography of member:')
+    m_type = models.CharField('Membership Categories and Post Nominal Designators:', max_length=20, choices=COURSE_CATEGORIES)
+    # num_students = models.SmallIntegerField("Number of Students", default=0)
+    # num_views = models.IntegerField("Number of views", default=0)
+    # price = models.SmallIntegerField("Course price:", default=0)
+    image = models.ImageField('member image:', upload_to='member-images/')
+    vidfile = models.FileField("Course video:", upload_to="course-video/")
+    date = models.DateTimeField('publication date')
+    is_img_edited = models.BooleanField('to track edited images', default=False)
+    is_published = models.BooleanField('click this to publish image', default=False)
+    
+    class Meta:
+        ordering = ['-date'] 
+        verbose_name = 'Our Institute Member'
+        verbose_name_plural = 'Our Institute Members'
+        
+    def __str__(self):
+        return self.name 
 
  
 class g_image(models.Model):

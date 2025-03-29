@@ -2,22 +2,23 @@
 {% load static %}
 
 {% block title %} 
-Our Premium Courses | Master Forensic Handwriting Analysis - Institute of Forensic Graphology, Nigeria
+Membership Directory | Certified Forensic Handwriting Experts - Institute of Forensic Graphology, Nigeria
 {% endblock %}
 
 {% block metadata %}     
-<meta name="description" content="Enroll in premium forensic handwriting analysis courses at the Institute of Forensic Graphology, Nigeria. Get expert-led training, globally recognized certification, and hands-on forensic document examination skills to advance your career." />
+<meta name="description" content="Explore our Membership Directory at the Institute of Forensic Graphology, Nigeria. Find certified forensic handwriting analysts, document examiners, and forensic experts recognized for their expertise and ethical standards in handwriting analysis." />
+<meta name="keywords" content="forensic handwriting experts, forensic graphology directory, certified document examiners, handwriting analysis professionals, forensic membership list, forensic investigation experts, forensic graphology certification, Institute of Forensic Graphology Nigeria members">
 <link rel="canonical" href="https://ifgn-institute.org{{request.path_info}}" />               
 <meta property="og:site_name" content="Institute of Forensic Graphology, Nigeria" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Our Premium Courses | Master Forensic Handwriting Analysis - Institute of Forensic Graphology, Nigeria" />
-<meta property="og:description" content="Enroll in premium forensic handwriting analysis courses at the Institute of Forensic Graphology, Nigeria. Get expert-led training, globally recognized certification, and hands-on forensic document examination skills to advance your career." />
+<meta property="og:title" content="Membership Directory | Certified Forensic Handwriting Experts - Institute of Forensic Graphology, Nigeria" />
+<meta property="og:description" content="Explore our Membership Directory at the Institute of Forensic Graphology, Nigeria. Find certified forensic handwriting analysts, document examiners, and forensic experts recognized for their expertise and ethical standards in handwriting analysis." />
 <meta property="og:image" content="https://ifgn-institute.org{% static 'ifgnapp/images/apple-touch-icon.png' %}" />
 <meta property="og:locale" content="en_us" />
 <meta property="og:url" content="https://ifgn-institute.org{{request.path_info}}" />
 <meta name="twitter:site" content="@ifgnofficial" />
-<meta name="twitter:title" content="Our Premium Courses | Master Forensic Handwriting Analysis - Institute of Forensic Graphology, Nigeria" />
-<meta name="twitter:description" content="Enroll in premium forensic handwriting analysis courses at the Institute of Forensic Graphology, Nigeria. Get expert-led training, globally recognized certification, and hands-on forensic document examination skills to advance your career." />
+<meta name="twitter:title" content="Membership Directory | Certified Forensic Handwriting Experts - Institute of Forensic Graphology, Nigeria" />
+<meta name="twitter:description" content="Explore our Membership Directory at the Institute of Forensic Graphology, Nigeria. Find certified forensic handwriting analysts, document examiners, and forensic experts recognized for their expertise and ethical standards in handwriting analysis." />
 <meta name="twitter:creator" content="@ugochukwunomehj" />
 <meta name="twitter:image" content="https://ifgn-institute.org{% static 'ifgnapp/images/apple-touch-icon.png' %}" />
 <meta property="twiter:card" content="summary_large_image" />
@@ -35,20 +36,20 @@ Our Premium Courses | Master Forensic Handwriting Analysis - Institute of Forens
     
   </aside>
   
+  <aside id="rays"></aside>
   <section id="top-page-txt-wrapper">
-    <h1> Our Premium Courses  </h1>
+    <h1> Our Membership Directory </h1>
     
     <div id="top-page-txt-box">
-      
       <a href="/">Home </a> 
       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
       </svg>
-      <span> Our Premium Courses </span>
+      <span> Membership Directory  </span>
     </div>
     <span id="down_arrow">
       <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 -960 960 960" width="100%" fill="currentColor"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-      </span>
+          </span>
   </section>
    
     </section>
@@ -56,13 +57,13 @@ Our Premium Courses | Master Forensic Handwriting Analysis - Institute of Forens
 
     </article>
     
-    {% if course %}
-    <!-- Our Hospital Facitities.. -->
+    {% if members %}
+
     <article class="inpage_sect">
     
         <section id="facili_holder">
     
-          {% for fac in course %}
+          {% for fac in members %}
           <section class="facili_box_wrapper" title="{{ fac.name }}">
               <div class="facili_img_wrapper">
                 <img src="/media/{{ fac.image }}" alt="{{ fac.name }}">

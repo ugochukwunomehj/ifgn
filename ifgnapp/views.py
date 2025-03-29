@@ -103,6 +103,18 @@ def img_gal(request):
 
 
 
+@re_ge
+def members(request):
+    img_gal = models.g_image.objects.order_by('-date')
+    
+    context = {
+                'status': "success",
+                'img_gal': img_gal,
+                 }
+    return(render(request, 'ifgnapp/members.html', context))
+
+
+
 def single_post(request, cnt_str, c_type):
     try:
         posts = models.post.objects.filter(is_published=True).filter(Q(slug_name__iexact=cnt_str) & Q(post_type__iexact=c_type)).first()

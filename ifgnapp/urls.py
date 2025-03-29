@@ -14,6 +14,7 @@ urlpatterns = [
     path('about-us/', views.about, name='about_us'),
     path('terms-privacy/', views.terms, name='terms_and_privacy'),
     path('case-studies/', views.caseStudies, name='case_studies'),
+    path('members/', views.members, name='our_members'),
     path('courses/', views.courses, name='our_courses'),
     path('images/gallery/', views.img_gal, name='image_gallery'),
     path('contact-us/', views.contact, name='contact_us'),
